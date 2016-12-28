@@ -7,16 +7,25 @@
 <body>
 
 <!-- BEGIN content -->
-<div class="out">
+<div class="out js-wrapper {% if page %}{{ page }}{% endif %}">
     <!-- header -->
     {% include "../blocks/_header.nunjucks" %}
+    <!-- center -->
+    <section class="center">
+        <!-- footer -->
+        {% include "../blocks/_footer.nunjucks" %}
+    </section>
     <!-- page content -->
-        {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
+    <!-- nav -->
+    <nav class="nav">
+        <a href="about" class="nav__link top-left js-link" data-title="about"><span>About</span></a>
+        <a href="#" class="nav__link top-right" data-title="portfolio"><span>Portfolio</span></a>
+        <a href="#" class="nav__link bottom-left" data-title="opinions"><span>Opinions</span></a>
+        <a href="#" class="nav__link bottom-right" data-title="contacts"><span>Contacts</span></a>
+    </nav>
 </div>
 <!-- END content -->
-
-<!-- footer -->
-{% include "../blocks/_footer.nunjucks" %}
 
 <!-- BEGIN scripts -->
 <script type="text/javascript" src="js/common.js"></script>

@@ -1,7 +1,16 @@
 'use strict';
-const $ = require('jquery');
+import $ from 'jquery';
+import slick from 'slick-carousel';
+import Barba from 'barba.js';
 
-// import file from './file';
 $(document).ready(function () {
-    // file();
+    //Barba.Pjax.start();
+
+    $('.js-slider').slick({
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        dots: true,
+        prevArrow: '.js-slider-prev',
+        nextArrow: '.js-slider-next'
+    })
 });

@@ -1,1 +1,148 @@
 // styles
+.center
+	position: relative
+	width: 50%
+	margin: 0 auto
+	height: 100%
+	background: $dark
+	z-index: 9
+.container
+	position: absolute
+	top: 100px
+	bottom: 100px
+	left: 50%
+	width: 820px
+	max-width: 80%
+	transform: translateX(-50%)
+	background-color: #1d2643
+	background-image: linear-gradient(to top, rgba(#1d2643, 0.9) 0%, rgba(#242f52, 0.9) 100%)
+	box-shadow: 0 0 40px 10px #13192f
+	z-index: 10
+.section
+	position: absolute
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+
+// start
+.start
+	position: absolute
+	top: 40px
+	bottom: 40px
+	left: 40px
+	right: 40px
+	border: 4px solid #252f51
+	text-align: center
+	&:before
+		content: ""
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 110px
+		margin-top: -2px
+		margin-left: -55px
+		height: 4px
+		background: #252f51
+	.start__title
+		position: absolute
+		bottom: 27%
+		left: 0
+		right: 0
+		font-size: 2.4rem
+		text-transform: uppercase
+		color: #7480a5
+		strong
+			color: #bfc7df
+		em
+			font-style: normal
+			text-decoration: line-through
+	.start__btn
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 19%
+.btn
+	display: inline-block
+	width: 160px
+	height: 46px
+	line-height: 46px
+	background: $text-color-dark
+	border-radius: 23px
+	transition: background 300ms
+	&:hover
+		background: darken($text-color-dark, 5%)
+
+// about
+.about
+	position: relative
+	height: 100%
+	padding: 7% 15% 4%
+	&:before
+		content: attr(data-title)
+		position: absolute
+		bottom: -10%
+		left: 2%
+		transform-origin: 0 0
+		transform: rotate(-90deg)
+		color: #252f51
+		font-size: 8rem
+		text-transform: uppercase
+		font-weight: bold
+		line-height: 1
+	.about__in
+		position: relative
+		height: 100%
+.prev, .next
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	background: none
+	font-size: 28px
+	color: $text-color-dark
+.prev
+	left: -20px
+.next
+	right: -20px
+.slider
+	height: 100%
+	.slider__item
+		height: 100%
+		text-align: center
+	.slider__img
+		font-size: 0
+		width: 150px
+		height: 150px
+		border-radius: 50%
+		background: $text-color
+		margin: 0 auto 5%
+		img
+			width: 150px
+			height: 150px
+			object-fit: cover
+	.slider__topper
+		position: relative
+		padding-bottom: 7%
+		margin-bottom: 7%
+		text-transform: uppercase
+		font-size: 2.4rem
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 50%
+			margin-left: -40px
+			width: 80px
+			height: 4px
+			background: #2e395f
+	.slider__subtitle
+		color: #7480a5
+	.slider__title
+		color: #bfc7df
+		font-weight: bold
+	.slider__content
+
+	.slider__mid
+		max-width: 240px
+		margin: 0 auto

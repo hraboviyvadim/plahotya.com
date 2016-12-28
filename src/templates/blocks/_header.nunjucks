@@ -1,3 +1,9 @@
 <header class="header">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci amet aperiam asperiores eaque est fuga iure. Alias aspernatur beatae dolor est laudantium libero neque, nisi quae, rerum tenetur vitae.</p>
+    <h1 class="logo">
+        <a href="intro" class="js-link">
+            {{ mixins.icon('logo') }}
+            <p>pavlo</p>
+            <p>plakhotia</p>
+        </a>
+    </h1>
 </header>

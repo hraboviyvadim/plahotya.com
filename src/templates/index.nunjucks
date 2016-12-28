@@ -1,16 +1,23 @@
 ---
-title: Template
+title: Plakhotia
+page: is-intro
 ---
 
 {% extends "./layouts/_layout.nunjucks" %}
 
 {% block content %}
-	{{ mixins.icon('close') }}
-	<p>Lorem ipsum dolor sit  amet, consectetur adipisicing elit. A accusantium assumenda, at culpa cum deserunt ea expedita fuga illo incidunt maxime praesentium quaerat quod similique sunt voluptates voluptatum. Culpa, sint.</p>
-    sdsd
-    dfdgfgryjh
-
-    {% for i in range(0, 5) %}
-        <div class="item-{{ i }}">sdsd{{ i }}</div>
-    {% endfor %}
+    <div class="container">
+        <!-- start page -->
+        <section class="section">
+            <div class="start">
+                <div class="start__title">
+                    <p>i'm <em>your</em></p>
+                    <p><strong>UI/UX Designer</strong></p>
+                </div>
+                <div class="start__btn">
+                    <a href="about" class="btn js-link">learn more</a>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}

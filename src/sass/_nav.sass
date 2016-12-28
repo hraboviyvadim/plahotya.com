@@ -1,0 +1,77 @@
+.nav
+	.nav__link
+		position: absolute
+		width: 25%
+		height: 50%
+		transition: background 300ms, color 300ms
+		color: $text-color-dark
+		text-transform: uppercase
+		text-decoration: none
+		font-size: 16px
+		&:after
+			content: attr(data-title)
+			position: absolute
+			font-size: 80px
+			opacity: 0
+			color: $text-color-dark
+			font-weight: bold
+			line-height: 1
+			transition: opacity 300ms
+			z-index: 10
+		span
+			position: relative
+			display: inline-block
+			padding-bottom: 2px
+			border-bottom: 4px solid transparent
+			transition: border-color 300ms
+		&:hover
+			background: $dark
+			color: #636e91
+			&:after
+				opacity: 0.2
+			span
+				border-color: #636e91
+		&.top-left
+			top: 0
+			left: 0
+			padding: 35px 0 0 15px
+			&:after
+				top: 90px
+				right: 100%
+				transform-origin: 100% 0
+				transform: rotate(-90deg) translate(15px, 3px)
+		&.top-right
+			top: 0
+			right: 0
+			text-align: right
+			padding: 35px 15px 0 0
+			&:after
+				top: 30px
+				right: 50px
+			span
+				transform-origin: 0 0
+				transform: rotate(90deg) scale(-1) translate(-80px, 70px)
+		&.bottom-left
+			left: 0
+			bottom: 0
+			&:after
+				bottom: 25px
+				left: 50px
+			span
+				position: absolute
+				bottom: 0
+				left: 15px
+				transform-origin: 0 0
+				transform: rotate(-90deg)
+		&.bottom-right
+			right: 0
+			bottom: 0
+			span
+				position: absolute
+				bottom: 15px
+				right: 15px
+			&:after
+				bottom: -25px
+				left: 100%
+				transform: translateX(-120px) rotate(-90deg)
+				transform-origin: 0 0

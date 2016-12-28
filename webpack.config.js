@@ -1,7 +1,7 @@
-var webpack    = require('webpack');
-var path       = require('path');
-var util       = require('gulp-util');
-var config     = require('./gulp/config');
+const webpack    = require('webpack');
+const path       = require('path');
+const util       = require('gulp-util');
+const config     = require('./gulp/config');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
