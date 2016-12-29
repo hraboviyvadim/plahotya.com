@@ -51,8 +51,13 @@ title: Plakhotia
                             </div>
                         </div>
                     </div>
+                    <!-- navigation arrows-->
                     <button type="button" class="prev js-slider-prev">{{ mixins.icon('left') }}</button>
                     <button type="button" class="next js-slider-next">{{ mixins.icon('right') }}</button>
+                    <!-- counter -->
+                    <div class="counter">
+                        <span class="counter__current js-slider-current">1</span> / <span class="js-slider-total">3</span>
+                    </div>
                 </div>
             </div>
         </section>
