@@ -4,16 +4,17 @@
 		width: 25%
 		height: 50%
 		transition: background 300ms, color 300ms
-		color: $text-color-dark
+		color: $text-color
 		text-transform: uppercase
 		text-decoration: none
 		font-size: 16px
+		z-index: 8
 		&:after
 			content: attr(data-title)
 			position: absolute
 			font-size: 80px
 			opacity: 0
-			color: $text-color-dark
+			color: $text-color
 			font-weight: bold
 			line-height: 1
 			transition: opacity 300ms
@@ -25,12 +26,12 @@
 			border-bottom: 4px solid transparent
 			transition: border-color 300ms
 		&:hover
-			background: $dark
-			color: #636e91
+			background: rgba($lightblue, 0.2)
+			color: $text-hover
 			&:after
 				opacity: 0.2
 			span
-				border-color: #636e91
+				border-color: $text-hover
 		&.top-left
 			top: 0
 			left: 0

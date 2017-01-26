@@ -1,0 +1,19 @@
+---
+title: Plakhotia
+---
+
+{% extends "./layouts/_layout.nunjucks" %}
+
+{% block content %}
+    <div class="container" id="barba-wrapper">
+        <!-- about page -->
+        <section class="section barba-container" data-namespace="contacts">
+            <div class="section__in contacts" data-title="contacts">
+                <div class="contacts__in">
+                    <div class="title">write to</div>
+                    <h1 class="contacts__mail">mail@plahotya.com</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

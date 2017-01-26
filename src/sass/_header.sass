@@ -11,26 +11,27 @@
 	top: 0
 	left: 50%
 	transform: translate(-50%, 0)
-	transition: transform 400ms
+	transition: transform 500ms
 	a
 		display: block
 		color: $text-color-dark
+		transition: color 300ms
+		&:hover
+			color: lighten($text-color-dark, 10%)
 		p
 			display: none
 			font-size: 2.4rem
 			text-transform: uppercase
 			opacity: 0
-			//visibility: hidden
-			transition: opacity 400ms
+			transition: opacity 500ms
 		svg
 			font-size: 10rem
 			transform: scale(0.4)
-			transition: transform 400ms
-	.is-intro &
+			transition: transform 500ms
+	.is-homepage &
 		transform: translate(-50%, 180px)
 		p
 			display: block
 			opacity:  1
-			//visibility: visible
 		svg
 			transform: scale(1)

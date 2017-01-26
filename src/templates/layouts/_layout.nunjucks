@@ -10,19 +10,19 @@
 <div class="out js-wrapper {% if page %}{{ page }}{% endif %}">
     <!-- header -->
     {% include "../blocks/_header.nunjucks" %}
+    <!-- page content -->
+    {% block content %}{% endblock %}
     <!-- center -->
     <section class="center">
         <!-- footer -->
         {% include "../blocks/_footer.nunjucks" %}
     </section>
-    <!-- page content -->
-    {% block content %}{% endblock %}
     <!-- nav -->
     <nav class="nav">
-        <a href="about" class="nav__link top-left js-link" data-title="about"><span>About</span></a>
+        <a href="about.html" class="nav__link top-left" data-title="about"><span>About</span></a>
         <a href="#" class="nav__link top-right" data-title="portfolio"><span>Portfolio</span></a>
         <a href="#" class="nav__link bottom-left" data-title="opinions"><span>Opinions</span></a>
-        <a href="#" class="nav__link bottom-right" data-title="contacts"><span>Contacts</span></a>
+        <a href="contacts.html" class="nav__link bottom-right" data-title="contacts"><span>Contacts</span></a>
     </nav>
 </div>
 <!-- END content -->
