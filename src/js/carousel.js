@@ -14,6 +14,16 @@ export default {
       counterTotal.text(slidesTotal);
       counterCurrent.text(slideCurrent);
       carousel.parent().addClass('loaded');
+
+      setTimeout(function () {
+        let useElement = $('.js-slider').find('use');
+        useElement.each(function () {
+          let href = $(this).attr('xlink:href');
+          console.log(href);
+          $(this).attr('xlink:href', href); // trigger fixing of href
+        });
+      }, 0);
+
     });
 
     carousel.slick({

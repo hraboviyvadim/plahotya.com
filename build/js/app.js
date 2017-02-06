@@ -12101,6 +12101,15 @@ webpackJsonp([0,1],[
 	      counterTotal.text(slidesTotal);
 	      counterCurrent.text(slideCurrent);
 	      carousel.parent().addClass('loaded');
+	
+	      setTimeout(function () {
+	        var useElement = (0, _jquery2.default)('.js-slider').find('use');
+	        useElement.each(function () {
+	          var href = (0, _jquery2.default)(this).attr('xlink:href');
+	          console.log(href);
+	          (0, _jquery2.default)(this).attr('xlink:href', href); // trigger fixing of href
+	        });
+	      }, 0);
 	    });
 	
 	    carousel.slick({
