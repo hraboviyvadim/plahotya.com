@@ -2,28 +2,38 @@
 import $ from 'jquery';
 import slick from 'slick-carousel';
 
-export default function (elem) {
+export default {
+  init: function () {
     let carousel = $('.js-slider'),
-        counterTotal = $('.js-slider-total'),
-        counterCurrent = $('.js-slider-current');
+      counterTotal = $('.js-slider-total'),
+      counterCurrent = $('.js-slider-current');
 
     carousel.on('init', function () {
-        let slidesTotal = carousel.find('.slick-slide').not('.slick-cloned').length;
-        let slideCurrent = +carousel.find('.slick-current').attr('data-slick-index') + 1;
-        counterTotal.text(slidesTotal);
-        counterCurrent.text(slideCurrent);
+      let slidesTotal = $('.slick-slide').not('.slick-cloned').length;
+      let slideCurrent = +carousel.find('.slick-current').attr('data-slick-index') + 1;
+      counterTotal.text(slidesTotal);
+      counterCurrent.text(slideCurrent);
+      carousel.parent().addClass('loaded');
     });
 
     carousel.slick({
-        slidesToScroll: 1,
-        slidesToShow: 1,
-        dots: true,
-        prevArrow: '.js-slider-prev',
-        nextArrow: '.js-slider-next'
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      dots: true,
+      prevArrow: '.js-slider-prev',
+      nextArrow: '.js-slider-next'
     });
 
     carousel.on('afterChange', function (slick, currentSlide) {
-        let index = currentSlide.currentSlide + 1;
-        counterCurrent.text(index);
+      let index = currentSlide.currentSlide + 1;
+      counterCurrent.text(index);
     });
+  },
+  destroy: function () {
+    let carousel = $('.js-slider');
+    carousel.parent().removeClass('loaded');
+    setTimeout(function () {
+      carousel.slick('unslick');
+    }, 300);
+  }
 }

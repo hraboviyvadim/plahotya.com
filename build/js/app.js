@@ -31,11 +31,22 @@ webpackJsonp([0,1],[
 	    });
 	    var About = _barba2.default.BaseView.extend({
 	        namespace: 'about',
-	        onEnter: function onEnter() {
-	            (0, _carousel2.default)();
+	        onEnterCompleted: function onEnterCompleted() {
+	            _carousel2.default.init();
 	        },
 	        onLeave: function onLeave() {
 	            wrapper.removeClass('is-homepage');
+	            _carousel2.default.destroy();
+	        }
+	    });
+	    var Opinions = _barba2.default.BaseView.extend({
+	        namespace: 'opinions',
+	        onEnterCompleted: function onEnterCompleted() {
+	            _carousel2.default.init();
+	        },
+	        onLeave: function onLeave() {
+	            wrapper.removeClass('is-homepage');
+	            _carousel2.default.destroy();
 	        }
 	    });
 	    var Contacts = _barba2.default.BaseView.extend({
@@ -50,6 +61,7 @@ webpackJsonp([0,1],[
 	
 	    Homepage.init();
 	    About.init();
+	    Opinions.init();
 	    Contacts.init();
 	
 	    _barba2.default.Pjax.start();
@@ -12064,34 +12076,8 @@ webpackJsonp([0,1],[
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
-	
-	exports.default = function (elem) {
-	    var carousel = (0, _jquery2.default)('.js-slider'),
-	        counterTotal = (0, _jquery2.default)('.js-slider-total'),
-	        counterCurrent = (0, _jquery2.default)('.js-slider-current');
-	
-	    carousel.on('init', function () {
-	        var slidesTotal = carousel.find('.slick-slide').not('.slick-cloned').length;
-	        var slideCurrent = +carousel.find('.slick-current').attr('data-slick-index') + 1;
-	        counterTotal.text(slidesTotal);
-	        counterCurrent.text(slideCurrent);
-	    });
-	
-	    carousel.slick({
-	        slidesToScroll: 1,
-	        slidesToShow: 1,
-	        dots: true,
-	        prevArrow: '.js-slider-prev',
-	        nextArrow: '.js-slider-next'
-	    });
-	
-	    carousel.on('afterChange', function (slick, currentSlide) {
-	        var index = currentSlide.currentSlide + 1;
-	        counterCurrent.text(index);
-	    });
-	};
 	
 	var _jquery = __webpack_require__(1);
 	
@@ -12100,8 +12086,44 @@ webpackJsonp([0,1],[
 	var _slickCarousel = __webpack_require__(4);
 	
 	var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  init: function init() {
+	    var carousel = (0, _jquery2.default)('.js-slider'),
+	        counterTotal = (0, _jquery2.default)('.js-slider-total'),
+	        counterCurrent = (0, _jquery2.default)('.js-slider-current');
+	
+	    carousel.on('init', function () {
+	      var slidesTotal = (0, _jquery2.default)('.slick-slide').not('.slick-cloned').length;
+	      var slideCurrent = +carousel.find('.slick-current').attr('data-slick-index') + 1;
+	      counterTotal.text(slidesTotal);
+	      counterCurrent.text(slideCurrent);
+	      carousel.parent().addClass('loaded');
+	    });
+	
+	    carousel.slick({
+	      slidesToScroll: 1,
+	      slidesToShow: 1,
+	      dots: true,
+	      prevArrow: '.js-slider-prev',
+	      nextArrow: '.js-slider-next'
+	    });
+	
+	    carousel.on('afterChange', function (slick, currentSlide) {
+	      var index = currentSlide.currentSlide + 1;
+	      counterCurrent.text(index);
+	    });
+	  },
+	  destroy: function destroy() {
+	    var carousel = (0, _jquery2.default)('.js-slider');
+	    carousel.parent().removeClass('loaded');
+	    setTimeout(function () {
+	      carousel.slick('unslick');
+	    }, 300);
+	  }
+	};
 
 /***/ },
 /* 4 */

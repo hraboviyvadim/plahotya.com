@@ -113,57 +113,57 @@
 	left: -20px
 .next
 	right: -20px
+.slider-wrap
+  opacity: 0
+  //visibility: hidden
+  transition: opacity 300ms
+  &.loaded
+    opacity: 1
+    //visibility: visible
 .slider
-	height: 100%
-	.slider__item
-		height: 100%
-		+vertical
-		cursor: hand
-	.slider__in
-		display: inline-block
-		vertical-align: middle
-		width: 100%
-	.slider__img
-		font-size: 0
-		width: 150px
-		height: 150px
-		border-radius: 50%
-		background: $text-color
-		margin: 0 auto 5%
-		img
-			width: 150px
-			height: 150px
-			object-fit: cover
-	.slider__topper
-		position: relative
-		padding-bottom: 7%
-		margin-bottom: 7%
-		text-transform: uppercase
-		font-size: 2.4rem
-		&:after
-			content: ""
-			position: absolute
-			bottom: 0
-			left: 50%
-			margin-left: -40px
-			width: 80px
-			height: 4px
-			background: $border
-	.slider__title
-		font-weight: bold
-	.slider__content
-		font-size: 0
-	.slider__col
-		width: 33.3%
-		display: inline-block
-		vertical-align: top
-		padding: 0 5%
-		text-align: left
-		font-size: 1.6rem
-	.slider__mid
-		max-width: 240px
-		margin: 0 auto
-		font-size: 1.6rem
+  height: 100%
+  .slider__item
+    display: inline-block
+    float: none
+    height: 100%
+    +vertical
+    cursor: hand
+  .slider__in
+    display: inline-block
+    vertical-align: middle
+    width: 100%
+  .slider__img
+    font-size: 0
+    width: 150px
+    height: 150px
+    border-radius: 50%
+    background: $text-color
+    margin: 0 auto 5%
+    img
+      width: 150px
+      height: 150px
+      object-fit: cover
+  .slider__topper
+    position: relative
+    text-transform: uppercase
+    font-size: 2.4rem
+  .slider__title
+    font-weight: bold
+  .slider__content
+    font-size: 0
+    & > p
+      font-size: 1.6rem
+  .slider__col
+    width: 33.3%
+    display: inline-block
+    vertical-align: top
+    padding: 0 5%
+    text-align: left
+    font-size: 1.6rem
+  .slider__mid
+    max-width: 240px
+    margin: 0 auto
+    font-size: 1.6rem
 .counter
 	position: absolute
 	top: -5%
