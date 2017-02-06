@@ -8,10 +8,25 @@ title: Plakhotia
     <div class="container" id="barba-wrapper">
         <!-- about page -->
         <section class="section barba-container" data-namespace="contacts">
-            <div class="section__in contacts" data-title="contacts">
-                <div class="contacts__in">
-                    <div class="title">write to</div>
-                    <h1 class="contacts__mail">mail@plahotya.com</h1>
+            <div class="section__in" data-title="contacts">
+                <div class="contacts">
+                    <div class="contacts__in">
+                        <div class="title">write to</div>
+                        <h1 class="contacts__mail">mail@plahotya.com</h1>
+                        <hr class="divide">
+                        <p>or fill out this form to get in touch.</p>
+                        <div class="form">
+                            <form action="#">
+                                <label class="form__row">
+                                    <input type="text" class="input" placeholder="Email Address">
+                                </label>
+                                <label class="form__row">
+                                    <textarea class="textarea" rows="5" placeholder="Project Description"></textarea>
+                                </label>
+                                <button class="btn">submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

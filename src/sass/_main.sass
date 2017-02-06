@@ -18,27 +18,28 @@
 	box-shadow: 0 0 40px 10px #d2dfee
 	z-index: 10
 .section
-	position: absolute
-	top: 0
-	bottom: 0
-	right: 0
-	left: 0
-	.section__in
-		position: relative
-		height: 100%
-		padding: 7% 15% 4%
-		&:before
-			content: attr(data-title)
-			position: absolute
-			bottom: -10%
-			left: 2%
-			transform-origin: 0 0
-			transform: rotate(-90deg)
-			color: rgba($text-color, 0.07)
-			font-size: 8rem
-			text-transform: uppercase
-			font-weight: bold
-			line-height: 1
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  .section__in
+    position: relative
+    height: 100%
+    padding: 7% 15% 4%
+    +vertical
+    &:after
+      content: attr(data-title)
+      position: absolute
+      bottom: -10%
+      left: 2%
+      transform-origin: 0 0
+      transform: rotate(-90deg)
+      color: rgba($text-color, 0.07)
+      font-size: 8rem
+      text-transform: uppercase
+      font-weight: bold
+      line-height: 1
 .title
 	text-align: center
 	font-size: 2.4rem
@@ -76,22 +77,28 @@
 		right: 0
 		height: 19%
 .btn
-	display: inline-block
-	width: 160px
-	height: 46px
-	line-height: 46px
-	background: $text-color
-	color: $main
-	text-transform: uppercase
-	transition: background 300ms
-	&:hover
-		background: $text-color-dark
+  display: inline-block
+  width: 160px
+  height: 46px
+  line-height: 46px
+  background: $text-color
+  color: $main
+  font-size: 14px
+  text-transform: uppercase
+  transition: background 300ms
+  &:hover
+    background: $text-color-dark
 
 // about
 .about
-	.about__in
-		position: relative
-		height: 100%
+  width: 100%
+  height: 100%
+  display: inline-block
+  vertical-align: middle
+  .about__in
+    position: relative
+    height: 100%
+    font-size: 16px
 .prev, .next
 	position: absolute
 	top: 50%
@@ -142,10 +149,7 @@
 			width: 80px
 			height: 4px
 			background: $border
-	.slider__subtitle
-		color: $text-color-dark
 	.slider__title
-		color: $text-color-dark
 		font-weight: bold
 	.slider__content
 		font-size: 0
@@ -156,11 +160,9 @@
 		padding: 0 5%
 		text-align: left
 		font-size: 1.6rem
-		color: $text-color-dark
 	.slider__mid
 		max-width: 240px
 		margin: 0 auto
-		color: $text-color-dark
 		font-size: 1.6rem
 .counter
 	position: absolute
@@ -207,9 +209,32 @@
 
 // contacts
 .contacts
-	text-align: center
-	.contacts__mail
-		text-transform: uppercase
-		font-size: 2.4rem
-		color: $text-color
-		font-weight: normal
+  width: 100%
+  display: inline-block
+  vertical-align: middle
+  text-align: center
+  font-size: 16px
+  .contacts__mail
+    text-transform: uppercase
+    font-size: 2.4rem
+    color: $text-color
+    font-weight: normal
+.form
+	max-width: 400px
+	margin: 30px auto
+	.form__row
+		display: block
+		margin-bottom: 10px
+.input, .textarea
+	width: 100%
+	border: 2px solid $lightblue
+	font-size: 16px
+	color: $text-color-dark
+	+placeholder
+		color: $text-color-dark
+.input
+	height: 42px
+	padding: 0 10px
+.textarea
+	padding: 10px
+	resize: none

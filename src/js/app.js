@@ -1,6 +1,6 @@
 'use strict';
 import $ from 'jquery';
-import Barba from 'barba';
+import Barba from 'barba.js';
 import carousel from './carousel';
 
 $(document).ready(function () {

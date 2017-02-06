@@ -8,76 +8,78 @@ title: Plakhotia
     <div class="container" id="barba-wrapper">
         <!-- about page -->
         <section class="section barba-container" data-namespace="about">
-            <div class="section__in about" data-title="about">
-                <div class="about__in">
+            <div class="section__in" data-title="about">
+                <div class="about">
+                  <div class="about__in">
                     <div class="slider js-slider">
-                        <!-- slide 1 -->
-                        <div class="slider__item">
-                            <div class="slider__in">
-                                <div class="slider__img">
-                                    <img src="img/pasha.png" alt="">
-                                </div>
-                                <div class="slider__topper">
-                                    <div class="slider__subtitle">my name is</div>
-                                    <div class="slider__title">Pavlo Plakhotia</div>
-                                </div>
-                                <div class="slider__content">
-                                    <div class="slider__mid">I’m professional UI/UX, Web, Motion and Graphic Designer with 7+ years experience.</div>
-                                </div>
-                            </div>
+                      <!-- slide 1 -->
+                      <div class="slider__item">
+                        <div class="slider__in">
+                          <div class="slider__img">
+                            <img src="img/pasha.png" alt="">
+                          </div>
+                          <div class="slider__topper">
+                            <div class="slider__subtitle">my name is</div>
+                            <div class="slider__title">Pavlo Plakhotia</div>
+                          </div>
+                          <div class="slider__content">
+                            <div class="slider__mid">I’m professional UI/UX, Web, Motion and Graphic Designer with 7+ years experience.</div>
+                          </div>
                         </div>
-                        <!-- slide 2 -->
-                        <div class="slider__item">
-                            <div class="slider__in">
-                                <div class="slider__topper">
-                                    <div class="slider__subtitle">skills</div>
-                                    <div class="slider__title">and experience</div>
-                                </div>
-                                <div class="slider__content">
-                                    <ul class="slider__col">
-                                        <li>Adobe Ps, Ai, AE</li>
-                                        <li>Sketch</li>
-                                        <li>Invision App</li>
-                                        <li>Axure RP</li>
-                                    </ul>
-                                    <ul class="slider__col">
-                                        <li>UX/UI</li>
-                                        <li>App Design</li>
-                                        <li>Web Design</li>
-                                        <li>Graphic Design</li>
-                                    </ul>
-                                    <ul class="slider__col">
-                                        <li>Logo Design</li>
-                                        <li>Print Design</li>
-                                        <li>Motion Design</li>
-                                        <li>CSS/HTML</li>
-                                    </ul>
-                                </div>
-                            </div>
+                      </div>
+                      <!-- slide 2 -->
+                      <div class="slider__item">
+                        <div class="slider__in">
+                          <div class="slider__topper">
+                            <div class="slider__subtitle">skills</div>
+                            <div class="slider__title">and experience</div>
+                          </div>
+                          <div class="slider__content">
+                            <ul class="slider__col">
+                              <li>Adobe Ps, Ai, AE</li>
+                              <li>Sketch</li>
+                              <li>Invision App</li>
+                              <li>Axure RP</li>
+                            </ul>
+                            <ul class="slider__col">
+                              <li>UX/UI</li>
+                              <li>App Design</li>
+                              <li>Web Design</li>
+                              <li>Graphic Design</li>
+                            </ul>
+                            <ul class="slider__col">
+                              <li>Logo Design</li>
+                              <li>Print Design</li>
+                              <li>Motion Design</li>
+                              <li>CSS/HTML</li>
+                            </ul>
+                          </div>
                         </div>
-                        <!-- slide 3 -->
-                        <div class="slider__item">
-                            <div class="slider__in">
-                                <div class="slider__topper">
-                                    <div class="slider__subtitle">More about me</div>
-                                    <div class="slider__title">IN social media</div>
-                                </div>
-                                <ul class="socials">
-                                    <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('fb') }}</a></li>
-                                    <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('tw') }}</a></li>
-                                    <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('in') }}</a></li>
-                                    <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('vk') }}</a></li>
-                                </ul>
-                            </div>
+                      </div>
+                      <!-- slide 3 -->
+                      <div class="slider__item">
+                        <div class="slider__in">
+                          <div class="slider__topper">
+                            <div class="slider__subtitle">More about me</div>
+                            <div class="slider__title">IN social media</div>
+                          </div>
+                          <ul class="socials">
+                            <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('fb') }}</a></li>
+                            <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('tw') }}</a></li>
+                            <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('in') }}</a></li>
+                            <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('vk') }}</a></li>
+                          </ul>
                         </div>
+                      </div>
                     </div>
                     <!-- navigation arrows-->
                     <button type="button" class="prev js-slider-prev">{{ mixins.icon('left') }}</button>
                     <button type="button" class="next js-slider-next">{{ mixins.icon('right') }}</button>
                     <!-- counter -->
                     <div class="counter">
-                        <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
+                      <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
                     </div>
+                  </div>
                 </div>
             </div>
         </section>
