@@ -1,21 +1,21 @@
 ---
 title: Plakhotia
-page: is-intro
+page: is-homepage
 ---
 
 {% extends "./layouts/_layout.nunjucks" %}
 
 {% block content %}
-    <div class="container">
-        <!-- start page -->
-        <section class="section">
+    <div class="container" id="barba-wrapper">
+        <!-- about page -->
+        <section class="section barba-container" data-namespace="homepage">
             <div class="start">
-                <div class="start__title">
-                    <p>i'm <em>your</em></p>
+                <div class="start__title title">
+                    <p>i'm your</p>
                     <p><strong>UI/UX Designer</strong></p>
                 </div>
                 <div class="start__btn">
-                    <a href="about" class="btn js-link">learn more</a>
+                    <a href="about.html" class="btn">about me</a>
                 </div>
             </div>
         </section>

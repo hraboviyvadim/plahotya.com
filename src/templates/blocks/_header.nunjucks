@@ -1,6 +1,6 @@
 <header class="header">
     <h1 class="logo">
-        <a href="intro" class="js-link">
+        <a href="index.html">
             {{ mixins.icon('logo') }}
             <p>pavlo</p>
             <p>plakhotia</p>

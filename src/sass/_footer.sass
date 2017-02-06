@@ -4,3 +4,20 @@
 	left: 0
 	right: 0
 	height: 100px
+	+vertical
+	.footer__in
+		display: inline-block
+		vertical-align: middle
+		font-size: 1.4rem
+		color: $text-color-dark
+	.footer__links
+		margin-bottom: 5%
+		li
+			display: inline-block
+			margin: 0 15px
+			a
+				font-size: 18px
+				color: $text-color
+				transition: color 300ms
+				&:hover
+					color: $text-color-dark

@@ -8,26 +8,112 @@ webpackJsonp([0,1],[
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _slickCarousel = __webpack_require__(3);
-	
-	var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
-	
 	var _barba = __webpack_require__(2);
 	
 	var _barba2 = _interopRequireDefault(_barba);
 	
+	var _carousel = __webpack_require__(3);
+	
+	var _carousel2 = _interopRequireDefault(_carousel);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _jquery2.default)(document).ready(function () {
-	    //Barba.Pjax.start();
-	
-	    (0, _jquery2.default)('.js-slider').slick({
-	        slidesToScroll: 1,
-	        slidesToShow: 1,
-	        dots: true,
-	        prevArrow: '.js-slider-prev',
-	        nextArrow: '.js-slider-next'
+	    var wrapper = (0, _jquery2.default)('.js-wrapper');
+	    var Homepage = _barba2.default.BaseView.extend({
+	        namespace: 'homepage',
+	        onEnter: function onEnter() {
+	            wrapper.addClass('is-homepage');
+	        },
+	        onLeave: function onLeave() {
+	            wrapper.removeClass('is-homepage');
+	        }
 	    });
+	    var About = _barba2.default.BaseView.extend({
+	        namespace: 'about',
+	        onEnter: function onEnter() {
+	            (0, _carousel2.default)();
+	        },
+	        onLeave: function onLeave() {
+	            wrapper.removeClass('is-homepage');
+	        }
+	    });
+	    var Contacts = _barba2.default.BaseView.extend({
+	        namespace: 'contacts',
+	        onEnter: function onEnter() {
+	            // some code here
+	        },
+	        onLeave: function onLeave() {
+	            wrapper.removeClass('is-homepage');
+	        }
+	    });
+	
+	    Homepage.init();
+	    About.init();
+	    Contacts.init();
+	
+	    _barba2.default.Pjax.start();
+	
+	    var FadeTransition = _barba2.default.BaseTransition.extend({
+	        start: function start() {
+	            /**
+	             * This function is automatically called as soon the Transition starts
+	             * this.newContainerLoading is a Promise for the loading of the new container
+	             * (Barba.js also comes with an handy Promise polyfill!)
+	             */
+	
+	            // As soon the loading is finished and the old page is faded out, let's fade the new page
+	            Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+	        },
+	
+	        fadeOut: function fadeOut() {
+	            /**
+	             * this.oldContainer is the HTMLElement of the old Container
+	             */
+	
+	            return (0, _jquery2.default)(this.oldContainer).animate({ opacity: 0 }).promise();
+	        },
+	
+	        fadeIn: function fadeIn() {
+	            /**
+	             * this.newContainer is the HTMLElement of the new Container
+	             * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+	             * Please note, newContainer is available just after newContainerLoading is resolved!
+	             */
+	
+	            var _this = this;
+	            var $el = (0, _jquery2.default)(this.newContainer);
+	
+	            (0, _jquery2.default)(this.oldContainer).hide();
+	
+	            $el.css({
+	                visibility: 'visible',
+	                opacity: 0
+	            });
+	
+	            $el.animate({ opacity: 1 }, 400, function () {
+	                /**
+	                 * Do not forget to call .done() as soon your transition is finished!
+	                 * .done() will automatically remove from the DOM the old Container
+	                 */
+	
+	                _this.done();
+	            });
+	        }
+	    });
+	
+	    /**
+	     * Next step, you have to tell Barba to use the new Transition
+	     */
+	
+	    _barba2.default.Pjax.getTransition = function () {
+	        /**
+	         * Here you can use your own logic!
+	         * For example you can use different Transition based on the current page or link...
+	         */
+	
+	        return FadeTransition;
+	    };
 	});
 
 /***/ },
@@ -11973,6 +12059,52 @@ webpackJsonp([0,1],[
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	exports.default = function (elem) {
+	    var carousel = (0, _jquery2.default)('.js-slider'),
+	        counterTotal = (0, _jquery2.default)('.js-slider-total'),
+	        counterCurrent = (0, _jquery2.default)('.js-slider-current');
+	
+	    carousel.on('init', function () {
+	        var slidesTotal = carousel.find('.slick-slide').not('.slick-cloned').length;
+	        var slideCurrent = +carousel.find('.slick-current').attr('data-slick-index') + 1;
+	        counterTotal.text(slidesTotal);
+	        counterCurrent.text(slideCurrent);
+	    });
+	
+	    carousel.slick({
+	        slidesToScroll: 1,
+	        slidesToShow: 1,
+	        dots: true,
+	        prevArrow: '.js-slider-prev',
+	        nextArrow: '.js-slider-next'
+	    });
+	
+	    carousel.on('afterChange', function (slick, currentSlide) {
+	        var index = currentSlide.currentSlide + 1;
+	        counterCurrent.text(index);
+	    });
+	};
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _slickCarousel = __webpack_require__(4);
+	
+	var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
