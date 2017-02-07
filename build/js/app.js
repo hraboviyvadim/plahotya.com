@@ -19,113 +19,121 @@ webpackJsonp([0,1],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _jquery2.default)(document).ready(function () {
-	    var wrapper = (0, _jquery2.default)('.js-wrapper');
-	    var Homepage = _barba2.default.BaseView.extend({
-	        namespace: 'homepage',
-	        onEnter: function onEnter() {
-	            wrapper.addClass('is-homepage');
-	        },
-	        onLeave: function onLeave() {
-	            wrapper.removeClass('is-homepage');
-	        }
-	    });
-	    var About = _barba2.default.BaseView.extend({
-	        namespace: 'about',
-	        onEnterCompleted: function onEnterCompleted() {
-	            _carousel2.default.init();
-	        },
-	        onLeave: function onLeave() {
-	            wrapper.removeClass('is-homepage');
-	            _carousel2.default.destroy();
-	        }
-	    });
-	    var Opinions = _barba2.default.BaseView.extend({
-	        namespace: 'opinions',
-	        onEnterCompleted: function onEnterCompleted() {
-	            _carousel2.default.init();
-	        },
-	        onLeave: function onLeave() {
-	            wrapper.removeClass('is-homepage');
-	            _carousel2.default.destroy();
-	        }
-	    });
-	    var Contacts = _barba2.default.BaseView.extend({
-	        namespace: 'contacts',
-	        onEnter: function onEnter() {
-	            // some code here
-	        },
-	        onLeave: function onLeave() {
-	            wrapper.removeClass('is-homepage');
-	        }
-	    });
+	  var wrapper = (0, _jquery2.default)('.js-wrapper');
+	  var Homepage = _barba2.default.BaseView.extend({
+	    namespace: 'homepage',
+	    onEnter: function onEnter() {
+	      wrapper.addClass('is-homepage');
+	    },
+	    onLeave: function onLeave() {
+	      wrapper.removeClass('is-homepage');
+	    }
+	  });
+	  var About = _barba2.default.BaseView.extend({
+	    namespace: 'about',
+	    onEnterCompleted: function onEnterCompleted() {
+	      _carousel2.default.init();
+	    },
+	    onLeave: function onLeave() {
+	      _carousel2.default.destroy();
+	    }
+	  });
+	  var Opinions = _barba2.default.BaseView.extend({
+	    namespace: 'opinions',
+	    onEnterCompleted: function onEnterCompleted() {
+	      _carousel2.default.init();
+	    },
+	    onLeave: function onLeave() {
+	      _carousel2.default.destroy();
+	    }
+	  });
+	  var Portfolio = _barba2.default.BaseView.extend({
+	    namespace: 'portfolio',
+	    onEnterCompleted: function onEnterCompleted() {
+	      _carousel2.default.init();
+	    },
+	    onLeave: function onLeave() {
+	      _carousel2.default.destroy();
+	    }
+	  });
+	  var Contacts = _barba2.default.BaseView.extend({
+	    namespace: 'contacts',
+	    onEnter: function onEnter() {
+	      // some code here
+	    },
+	    onLeave: function onLeave() {
+	      // some code here
+	    }
+	  });
 	
-	    Homepage.init();
-	    About.init();
-	    Opinions.init();
-	    Contacts.init();
+	  Homepage.init();
+	  About.init();
+	  Opinions.init();
+	  Contacts.init();
+	  Portfolio.init();
 	
-	    _barba2.default.Pjax.start();
+	  _barba2.default.Pjax.start();
 	
-	    var FadeTransition = _barba2.default.BaseTransition.extend({
-	        start: function start() {
-	            /**
-	             * This function is automatically called as soon the Transition starts
-	             * this.newContainerLoading is a Promise for the loading of the new container
-	             * (Barba.js also comes with an handy Promise polyfill!)
-	             */
+	  var FadeTransition = _barba2.default.BaseTransition.extend({
+	    start: function start() {
+	      /**
+	       * This function is automatically called as soon the Transition starts
+	       * this.newContainerLoading is a Promise for the loading of the new container
+	       * (Barba.js also comes with an handy Promise polyfill!)
+	       */
 	
-	            // As soon the loading is finished and the old page is faded out, let's fade the new page
-	            Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
-	        },
+	      // As soon the loading is finished and the old page is faded out, let's fade the new page
+	      Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+	    },
 	
-	        fadeOut: function fadeOut() {
-	            /**
-	             * this.oldContainer is the HTMLElement of the old Container
-	             */
+	    fadeOut: function fadeOut() {
+	      /**
+	       * this.oldContainer is the HTMLElement of the old Container
+	       */
 	
-	            return (0, _jquery2.default)(this.oldContainer).animate({ opacity: 0 }).promise();
-	        },
+	      return (0, _jquery2.default)(this.oldContainer).animate({ opacity: 0 }).promise();
+	    },
 	
-	        fadeIn: function fadeIn() {
-	            /**
-	             * this.newContainer is the HTMLElement of the new Container
-	             * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-	             * Please note, newContainer is available just after newContainerLoading is resolved!
-	             */
+	    fadeIn: function fadeIn() {
+	      /**
+	       * this.newContainer is the HTMLElement of the new Container
+	       * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+	       * Please note, newContainer is available just after newContainerLoading is resolved!
+	       */
 	
-	            var _this = this;
-	            var $el = (0, _jquery2.default)(this.newContainer);
+	      var _this = this;
+	      var $el = (0, _jquery2.default)(this.newContainer);
 	
-	            (0, _jquery2.default)(this.oldContainer).hide();
+	      (0, _jquery2.default)(this.oldContainer).hide();
 	
-	            $el.css({
-	                visibility: 'visible',
-	                opacity: 0
-	            });
+	      $el.css({
+	        visibility: 'visible',
+	        opacity: 0
+	      });
 	
-	            $el.animate({ opacity: 1 }, 400, function () {
-	                /**
-	                 * Do not forget to call .done() as soon your transition is finished!
-	                 * .done() will automatically remove from the DOM the old Container
-	                 */
-	
-	                _this.done();
-	            });
-	        }
-	    });
-	
-	    /**
-	     * Next step, you have to tell Barba to use the new Transition
-	     */
-	
-	    _barba2.default.Pjax.getTransition = function () {
+	      $el.animate({ opacity: 1 }, 400, function () {
 	        /**
-	         * Here you can use your own logic!
-	         * For example you can use different Transition based on the current page or link...
+	         * Do not forget to call .done() as soon your transition is finished!
+	         * .done() will automatically remove from the DOM the old Container
 	         */
 	
-	        return FadeTransition;
-	    };
+	        _this.done();
+	      });
+	    }
+	  });
+	
+	  /**
+	   * Next step, you have to tell Barba to use the new Transition
+	   */
+	
+	  _barba2.default.Pjax.getTransition = function () {
+	    /**
+	     * Here you can use your own logic!
+	     * For example you can use different Transition based on the current page or link...
+	     */
+	
+	    return FadeTransition;
+	  };
 	});
 
 /***/ },

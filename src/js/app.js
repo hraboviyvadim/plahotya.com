@@ -20,7 +20,6 @@ $(document).ready(function () {
         carousel.init();
       },
       onLeave: function() {
-        wrapper.removeClass('is-homepage');
         carousel.destroy();
       }
   });
@@ -30,7 +29,15 @@ $(document).ready(function () {
       carousel.init();
     },
     onLeave: function() {
-      wrapper.removeClass('is-homepage');
+      carousel.destroy();
+    }
+  });
+  const Portfolio = Barba.BaseView.extend({
+    namespace: 'portfolio',
+    onEnterCompleted: function() {
+      carousel.init();
+    },
+    onLeave: function() {
       carousel.destroy();
     }
   });
@@ -40,7 +47,7 @@ $(document).ready(function () {
         // some code here
     },
     onLeave: function() {
-        wrapper.removeClass('is-homepage');
+      // some code here
     }
   });
 
@@ -48,6 +55,7 @@ $(document).ready(function () {
   About.init();
   Opinions.init();
   Contacts.init();
+  Portfolio.init();
 
 
   Barba.Pjax.start();

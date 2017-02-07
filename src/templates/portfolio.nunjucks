@@ -1,0 +1,85 @@
+---
+title: Plakhotia
+---
+
+{% extends "./layouts/_layout.nunjucks" %}
+
+{% block content %}
+  <div class="container" id="barba-wrapper">
+    <!-- about page -->
+    <section class="section barba-container" data-namespace="portfolio">
+      <div class="section__in" data-title="portfolio">
+        <div class="about">
+          <div class="about__in">
+            <div class="slider-wrap">
+              <div class="slider js-slider">
+                <!-- slide 1 -->
+                <div class="slider__item">
+                  <div class="portfolio">
+                    <div class="portfolio__item">
+                      <a href="#" class="portfolio__link">
+                        <div class="portfolio__block"></div>
+                      </a>
+                    </div>
+                    <div class="portfolio__item">
+                      <a href="#" class="portfolio__link">
+                        <div class="portfolio__block"></div>
+                      </a>
+                    </div>
+                    <div class="portfolio__item">
+                      <a href="#" class="portfolio__link">
+                        <div class="portfolio__block"></div>
+                      </a>
+                    </div>
+                    <div class="portfolio__item">
+                      <a href="#" class="portfolio__link">
+                        <div class="portfolio__block"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 2 -->
+                <div class="slider__item">
+                  <div class="slider__in">
+                    <div class="slider__topper">
+                      <div class="slider__subtitle">skills</div>
+                      <div class="slider__title">and experience</div>
+                    </div>
+                    <hr class="divide">
+                    <div class="slider__content">
+                      <ul class="slider__col">
+                        <li>Adobe Ps, Ai, AE</li>
+                        <li>Sketch</li>
+                        <li>Invision App</li>
+                        <li>Axure RP</li>
+                      </ul>
+                      <ul class="slider__col">
+                        <li>UX/UI</li>
+                        <li>App Design</li>
+                        <li>Web Design</li>
+                        <li>Graphic Design</li>
+                      </ul>
+                      <ul class="slider__col">
+                        <li>Logo Design</li>
+                        <li>Print Design</li>
+                        <li>Motion Design</li>
+                        <li>CSS/HTML</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- navigation arrows-->
+              <button type="button" class="prev js-slider-prev">{{ mixins.icon('left') }}</button>
+              <button type="button" class="next js-slider-next">{{ mixins.icon('right') }}</button>
+              <!-- counter -->
+              <div class="counter">
+                <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}
