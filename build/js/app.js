@@ -15075,7 +15075,8 @@ webpackJsonp([0,1],[
 	      this.link.on('click', function (e) {
 	        e.preventDefault();
 	        var imgLink = e.target.getAttribute('href');
-	        _this.open(imgLink);
+	        var imgText = e.target.getAttribute('data-alt');
+	        _this.open(imgLink, imgText);
 	        return false;
 	      });
 	      this.closeBtn.on('click', function () {
@@ -15084,12 +15085,12 @@ webpackJsonp([0,1],[
 	    }
 	  }, {
 	    key: 'open',
-	    value: function open(href) {
+	    value: function open(href, text) {
 	      var _this3 = this;
 	
 	      this.overlay.show();
-	      this.img.attr('src', href);
-	      this.img.on('load', function () {
+	      this.img.html('<img src="' + href + '" alt="' + text + '">');
+	      this.img.find('img').on('load', function () {
 	        _this3.modal.addClass('open');
 	      });
 	    }

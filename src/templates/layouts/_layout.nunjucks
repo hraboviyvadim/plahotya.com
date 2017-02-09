@@ -32,9 +32,7 @@
     <div class="modal js-modal">
       <button class="modal__close js-modal-close">close {{ mixins.icon('close') }}</button>
       <div class="modal__in">
-        <div class="modal__img">
-          <img class="js-modal-img" alt="">
-        </div>
+        <div class="modal__img js-modal-img"></div>
       </div>
     </div>
 </div>

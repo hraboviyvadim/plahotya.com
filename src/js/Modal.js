@@ -15,17 +15,18 @@ export class Modal {
     this.link.on('click', function(e) {
       e.preventDefault();
       let imgLink = e.target.getAttribute('href');
-      _this.open(imgLink);
+      let imgText = e.target.getAttribute('data-alt');
+      _this.open(imgLink, imgText);
       return false;
     });
     this.closeBtn.on('click', () => {
       this.close();
     });
   }
-  open(href){
+  open(href, text){
     this.overlay.show();
-    this.img.attr('src', href);
-    this.img.on('load', () => {
+    this.img.html(`<img src="${href}" alt="${text}">`);
+    this.img.find('img').on('load', () => {
       this.modal.addClass('open');
     });
   }

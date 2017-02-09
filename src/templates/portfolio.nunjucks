@@ -17,22 +17,22 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="portfolio">
                     <div class="portfolio__item">
-                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link">
+                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link" data-alt="ui-web">
                         <div class="portfolio__block"></div>
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link">
+                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link" data-alt="ui-mobile">
                         <div class="portfolio__block"></div>
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link">
+                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link" data-alt="logos">
                         <div class="portfolio__block"></div>
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link">
+                      <a href="img/portfolio-ui-web.jpg" class="portfolio__link no-barba js-modal-link" data-alt="illustrations">
                         <div class="portfolio__block"></div>
                       </a>
                     </div>
