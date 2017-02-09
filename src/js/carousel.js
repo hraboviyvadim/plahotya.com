@@ -43,6 +43,6 @@ export default {
     carousel.parent().removeClass('loaded');
     setTimeout(function () {
       carousel.slick('unslick');
-    }, 300);
+    }, 0);
   }
 }

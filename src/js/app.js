@@ -20,7 +20,7 @@ $(document).ready(function () {
     onEnterCompleted: function() {
         carousel.init();
       },
-      onLeave: function() {
+    onLeave: function() {
         carousel.destroy();
       }
   });
