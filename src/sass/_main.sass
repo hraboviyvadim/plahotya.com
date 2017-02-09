@@ -175,7 +175,6 @@
 	line-height: 1
 	transform-origin: 100% 0
 	transform: rotate(-90deg)
-  will-change: transform
 	.counter__current
 		font-size: 8rem
 	+rh(960)
@@ -263,3 +262,30 @@
     transition: background 300ms
     &:hover
       background: #3984de
+      .portfolio__title
+        color: #fff
+  .portfolio__block
+    position: relative
+    height: 100%
+    +vertical
+    img
+      display: inline-block
+      vertical-align: middle
+      height: 50%
+    .icon
+      display: inline-block
+      vertical-align: middle
+      font-size: 70px
+      color: #fff
+      &.icon-dribbble
+        font-size: 80px
+  .portfolio__title
+    position: absolute
+    bottom: 5%
+    left: 5px
+    right: 5px
+    font-size: 16px
+    color: #07386e
+    transition: color 300ms
+
+

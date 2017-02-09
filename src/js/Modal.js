@@ -13,9 +13,8 @@ export class Modal {
   init(){
     let _this = this;
     this.link.on('click', function(e) {
-      e.preventDefault();
-      let imgLink = e.target.getAttribute('href');
-      let imgText = e.target.getAttribute('data-alt');
+      let imgLink = $(this).attr('href');
+      let imgText = $(this).data('alt');
       _this.open(imgLink, imgText);
       return false;
     });
