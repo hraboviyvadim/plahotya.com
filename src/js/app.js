@@ -2,6 +2,7 @@
 import $ from 'jquery';
 import Barba from 'barba.js';
 import carousel from './carousel';
+import {Modal} from './Modal';
 
 $(document).ready(function () {
   let wrapper = $('.js-wrapper');
@@ -36,6 +37,7 @@ $(document).ready(function () {
     namespace: 'portfolio',
     onEnterCompleted: function() {
       carousel.init();
+      const modal = new Modal();
     },
     onLeave: function() {
       carousel.destroy();
@@ -60,7 +62,7 @@ $(document).ready(function () {
 
   Barba.Pjax.start();
 
-const FadeTransition = Barba.BaseTransition.extend({
+  const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
       /**
        * This function is automatically called as soon the Transition starts
@@ -110,18 +112,8 @@ const FadeTransition = Barba.BaseTransition.extend({
   }
   });
 
-  /**
-   * Next step, you have to tell Barba to use the new Transition
-   */
-
   Barba.Pjax.getTransition = function() {
-      /**
-       * Here you can use your own logic!
-       * For example you can use different Transition based on the current page or link...
-       */
-
       return FadeTransition;
   };
-
 
 });

@@ -1,0 +1,59 @@
+// modals
+.overlay
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  padding: 100px 20px
+  background: rgba(#001833, 0.9)
+
+  +vertical
+  z-index: 99
+  &.open
+    display: block
+.modal
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  width: 100%
+  height: 100%
+  max-width: 1400px
+  opacity: 0
+  transform: translateY(100px)
+  transition: transform 500ms, opacity 500ms
+  &.open
+    opacity: 1
+    transform: translateY(0)
+  .modal__in
+    height: 100%
+    overflow-y: auto
+    padding-right: 8px
+    +scrollbar
+      width: 8px
+      padding: 0 2px
+    +scrollbar-track
+      width: 4px
+      border-radius: 2px
+      background: #07386e
+    +scrollbar-thumb
+      width: 8px
+      border-radius: 4px
+      background: #bddcff
+  .modal__img
+    img
+      display: block
+      width: 100%
+      height: auto
+  .modal__close
+    position: absolute
+    right: 0
+    top: -70px
+    background: none
+    font-size: 16px
+    color: $lightblue
+    text-transform: uppercase
+    .icon
+      display: inline-block
+      vertical-align: middle
+      font-size: 34px

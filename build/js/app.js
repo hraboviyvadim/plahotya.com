@@ -16,6 +16,8 @@ webpackJsonp([0,1],[
 	
 	var _carousel2 = _interopRequireDefault(_carousel);
 	
+	var _Modal = __webpack_require__(5);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _jquery2.default)(document).ready(function () {
@@ -51,6 +53,7 @@ webpackJsonp([0,1],[
 	    namespace: 'portfolio',
 	    onEnterCompleted: function onEnterCompleted() {
 	      _carousel2.default.init();
+	      var modal = new _Modal.Modal();
 	    },
 	    onLeave: function onLeave() {
 	      _carousel2.default.destroy();
@@ -122,16 +125,7 @@ webpackJsonp([0,1],[
 	    }
 	  });
 	
-	  /**
-	   * Next step, you have to tell Barba to use the new Transition
-	   */
-	
 	  _barba2.default.Pjax.getTransition = function () {
-	    /**
-	     * Here you can use your own logic!
-	     * For example you can use different Transition based on the current page or link...
-	     */
-	
 	    return FadeTransition;
 	  };
 	});
@@ -12114,7 +12108,6 @@ webpackJsonp([0,1],[
 	        var useElement = (0, _jquery2.default)('.js-slider').find('use');
 	        useElement.each(function () {
 	          var href = (0, _jquery2.default)(this).attr('xlink:href');
-	          console.log(href);
 	          (0, _jquery2.default)(this).attr('xlink:href', href); // trigger fixing of href
 	        });
 	      }, 0);
@@ -15039,6 +15032,77 @@ webpackJsonp([0,1],[
 	
 	}));
 
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Modal = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _jquery = __webpack_require__(1);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Modal = exports.Modal = function () {
+	  function Modal() {
+	    _classCallCheck(this, Modal);
+	
+	    this.link = (0, _jquery2.default)('.js-modal-link');
+	    this.overlay = (0, _jquery2.default)('.js-overlay');
+	    this.modal = (0, _jquery2.default)('.js-modal');
+	    this.closeBtn = (0, _jquery2.default)('.js-modal-close');
+	    this.img = (0, _jquery2.default)('.js-modal-img');
+	    this.init();
+	  }
+	
+	  _createClass(Modal, [{
+	    key: 'init',
+	    value: function init() {
+	      var _this2 = this;
+	
+	      var _this = this;
+	      this.link.on('click', function (e) {
+	        e.preventDefault();
+	        var imgLink = e.target.getAttribute('href');
+	        _this.open(imgLink);
+	        return false;
+	      });
+	      this.closeBtn.on('click', function () {
+	        _this2.close();
+	      });
+	    }
+	  }, {
+	    key: 'open',
+	    value: function open(href) {
+	      var _this3 = this;
+	
+	      this.overlay.show();
+	      this.img.attr('src', href);
+	      this.img.on('load', function () {
+	        _this3.modal.addClass('open');
+	      });
+	    }
+	  }, {
+	    key: 'close',
+	    value: function close() {
+	      this.modal.removeClass('open');
+	      this.overlay.hide();
+	    }
+	  }]);
+
+	  return Modal;
+	}();
 
 /***/ }
 ]);

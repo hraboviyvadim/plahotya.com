@@ -19,7 +19,6 @@ export default {
         let useElement = $('.js-slider').find('use');
         useElement.each(function () {
           let href = $(this).attr('xlink:href');
-          console.log(href);
           $(this).attr('xlink:href', href); // trigger fixing of href
         });
       }, 0);
