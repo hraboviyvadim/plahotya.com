@@ -1,10 +1,10 @@
 <footer class="footer">
     <div class="footer__in">
         <ul class="footer__links">
-            <li><a href="#" class="no-barba" target="_blank">{{ mixins.icon('dribbble') }}</a></li>
-            <li><a href="#" class="no-barba" target="_blank">{{ mixins.icon('behance') }}</a></li>
-            <li><a href="#" class="no-barba" target="_blank">{{ mixins.icon('instagram') }}</a></li>
-            <li><a href="#" class="no-barba" target="_blank">{{ mixins.icon('share') }}</a></li>
+            <li><a href="https://dribbble.com/plahotya" target="_blank" class="no-barba" target="_blank">{{ mixins.icon('dribbble') }}</a></li>
+            <li><a href="https://www.behance.net/plahotya" target="_blank" class="no-barba" target="_blank">{{ mixins.icon('behance') }}</a></li>
+            <li><a href="https://www.instagram.com/pplahotya" target="_blank" class="no-barba" target="_blank">{{ mixins.icon('instagram') }}</a></li>
+            <li><a href="#" target="_blank" class="no-barba" target="_blank">{{ mixins.icon('share') }}</a></li>
         </ul>
         <p>Copyright © 2017 Pavlo Plakhotia</p>
     </div>

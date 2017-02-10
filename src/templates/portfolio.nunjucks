@@ -54,7 +54,7 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="portfolio">
                     <div class="portfolio__item">
-                      <a href="#" class="portfolio__link no-barba" target="_blank">
+                      <a href="https://www.behance.net/plahotya" class="portfolio__link behance no-barba" target="_blank">
                         <div class="portfolio__block">
                           {{ mixins.icon('behance') }}
                           <div class="portfolio__title">Portfolio on Behance</div>
@@ -62,7 +62,7 @@ title: Plakhotia
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="#" class="portfolio__link no-barba" target="_blank">
+                      <a href="https://dribbble.com/plahotya" class="portfolio__link dribbble no-barba" target="_blank">
                         <div class="portfolio__block">
                           {{ mixins.icon('dribbble') }}
                           <div class="portfolio__title">Portfolio on Dribbble</div>
@@ -70,7 +70,7 @@ title: Plakhotia
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="#" class="portfolio__link no-barba" target="_blank">
+                      <a href="https://creativemarket.com/plahotya" class="portfolio__link creativemarket no-barba" target="_blank">
                         <div class="portfolio__block">
                           {{ mixins.icon('creativemarket') }}
                           <div class="portfolio__title">Portfolio on Creativemarket</div>
@@ -78,7 +78,7 @@ title: Plakhotia
                       </a>
                     </div>
                     <div class="portfolio__item">
-                      <a href="#" class="portfolio__link no-barba" target="_blank">
+                      <a href="http://www.shutterstock.com/g/LinaStocker?rid=4469329" class="portfolio__link shutterstock no-barba" target="_blank">
                         <div class="portfolio__block">
                           {{ mixins.icon('shutterstock') }}
                           <div class="portfolio__title">Portfolio on Shutterstock</div>

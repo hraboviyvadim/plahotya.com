@@ -68,10 +68,12 @@ title: Plakhotia
                     </div>
                     <hr class="divide">
                     <ul class="socials">
-                      <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('fb') }}</a></li>
-                      <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('tw') }}</a></li>
-                      <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('in') }}</a></li>
-                      <li><a href="#" class="socials__link" target="_blank">{{ mixins.icon('vk') }}</a></li>
+                      <li><a href="https://www.facebook.com/plahotya" class="socials__link" target="_blank">{{ mixins.icon('fb') }}</a></li>
+                      <li><a href="https://twitter.com/pplahotya" class="socials__link" target="_blank">{{ mixins.icon('tw') }}</a></li>
+                      <li><a href="https://www.linkedin.com/in/plahotya/" class="socials__link" target="_blank">{{ mixins.icon('in') }}</a></li>
+                      <li><a href="https://www.pinterest.com/plahotya/" class="socials__link" target="_blank">{{ mixins.icon('pinterest') }}</a></li>
+                      <li><a href="https://plahotya.tumblr.com/" class="socials__link" target="_blank">{{ mixins.icon('tumblr')
+                          }}</a></li>
                     </ul>
                   </div>
                 </div>
