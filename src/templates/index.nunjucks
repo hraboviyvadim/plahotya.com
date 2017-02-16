@@ -6,18 +6,25 @@ page: is-homepage
 {% extends "./layouts/_layout.nunjucks" %}
 
 {% block content %}
-    <div class="container" id="barba-wrapper">
-        <!-- about page -->
-        <section class="section barba-container" data-namespace="homepage">
-            <div class="start">
-                <div class="start__title title">
-                    <p>i'm your</p>
-                    <p><strong>UI/UX Designer</strong></p>
-                </div>
-                <div class="start__btn">
-                    <a href="about.html" class="btn">about me</a>
-                </div>
-            </div>
-        </section>
+<div class="container" id="barba-wrapper">
+  <!-- about page -->
+  <section class="section barba-container" data-namespace="homepage">
+    <div class="start">
+      <div class="start__in">
+        <div class="start__logo">
+          {{ mixins.icon('logo') }}
+          <p>pavlo</p>
+          <p>plakhotia</p>
+        </div>
+        <div class="start__title title">
+          <p>i'm your</p>
+          <p><strong>UI/UX Designer</strong></p>
+        </div>
+        <div class="start__btn">
+          <a href="about.html" class="btn">about me</a>
+        </div>
+      </div>
     </div>
+  </section>
+</div>
 {% endblock %}

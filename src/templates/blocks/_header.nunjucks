@@ -1,9 +1,14 @@
 <header class="header">
-    <h1 class="logo">
-        <a href="index.html">
-            {{ mixins.icon('logo') }}
-            <p>pavlo</p>
-            <p>plakhotia</p>
-        </a>
-    </h1>
+  <h1 class="logo">
+    <a href="index.html">
+      {{ mixins.icon('logo') }}
+      <p>pavlo</p>
+      <p>plakhotia</p>
+    </a>
+  </h1>
+  <a href="index.html" class="mob-logo">
+    <div class="mob-logo__img">
+      {{ mixins.icon('logo') }}
+    </div>
+  </a>
 </header>

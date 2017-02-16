@@ -8,22 +8,25 @@
 
 <!-- BEGIN content -->
 <div class="out js-wrapper {% if page %}{{ page }}{% endif %}">
-    <!-- header -->
-    {% include "../blocks/_header.nunjucks" %}
-    <!-- page content -->
-    {% block content %}{% endblock %}
+  <!-- header -->
+  {% include "../blocks/_header.nunjucks" %}
+  <!-- page content -->
+  {% block content %}{% endblock %}
+  <!-- nav -->
+  <nav class="nav js-mob-nav">
+    <ul class="nav__menu">
+      <li><a href="about.html" class="nav__link top-left" data-title="about"><span>About</span></a></li>
+      <li><a href="portfolio.html" class="nav__link top-right" data-title="portfolio"><span>Portfolio</span></a></li>
+      <li><a href="opinions.html" class="nav__link bottom-left" data-title="opinions"><span>Opinions</span></a></li>
+      <li><a href="contacts.html" class="nav__link bottom-right" data-title="contacts"><span>Contacts</span></a></li>
+    </ul>
     <!-- center -->
     <section class="center">
-        <!-- footer -->
-        {% include "../blocks/_footer.nunjucks" %}
+      <!-- footer -->
+      {% include "../blocks/_footer.nunjucks" %}
     </section>
-    <!-- nav -->
-    <nav class="nav">
-        <a href="about.html" class="nav__link top-left" data-title="about"><span>About</span></a>
-        <a href="portfolio.html" class="nav__link top-right" data-title="portfolio"><span>Portfolio</span></a>
-        <a href="opinions.html" class="nav__link bottom-left" data-title="opinions"><span>Opinions</span></a>
-        <a href="contacts.html" class="nav__link bottom-right" data-title="contacts"><span>Contacts</span></a>
-    </nav>
+  </nav>
+  <button class="humb js-humb"><span></span></button>
 </div>
 <!-- END content -->
 

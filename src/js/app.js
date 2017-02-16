@@ -9,28 +9,42 @@ $(document).ready(function () {
   const Homepage = Barba.BaseView.extend({
     namespace: 'homepage',
     onEnter: function() {
-        wrapper.addClass('is-homepage');
+      wrapper.addClass('is-homepage');
+      $('[data-title]').removeClass('active');
     },
     onLeave: function() {
+
+      setTimeout(function () {
         wrapper.removeClass('is-homepage');
+      }, 350);
+
+    },
+    onLeaveCompleted: function () {
+      hideNav();
     }
   });
   const About = Barba.BaseView.extend({
     namespace: 'about',
     onEnterCompleted: function() {
-        carousel.init();
+      $('[data-title]').removeClass('active');
+      $('[data-title="about"]').addClass('active');
+      carousel.init();
       },
     onLeave: function() {
         carousel.destroy();
+      hideNav();
       }
   });
   const Opinions = Barba.BaseView.extend({
     namespace: 'opinions',
     onEnterCompleted: function() {
       carousel.init();
+      $('[data-title]').removeClass('active');
+      $('[data-title="opinions"]').addClass('active');
     },
     onLeave: function() {
       carousel.destroy();
+      hideNav();
     }
   });
   const Portfolio = Barba.BaseView.extend({
@@ -38,18 +52,22 @@ $(document).ready(function () {
     onEnterCompleted: function() {
       carousel.init();
       const modal = new Modal();
+      $('[data-title]').removeClass('active');
+      $('[data-title="portfolio"]').addClass('active');
     },
     onLeave: function() {
       carousel.destroy();
+      hideNav();
     }
   });
   const Contacts = Barba.BaseView.extend({
     namespace: 'contacts',
-    onEnter: function() {
-        // some code here
+    onEnterCompleted: function() {
+      $('[data-title]').removeClass('active');
+      $('[data-title="contacts"]').addClass('active');
     },
     onLeave: function() {
-      // some code here
+      hideNav();
     }
   });
 
@@ -115,5 +133,24 @@ $(document).ready(function () {
   Barba.Pjax.getTransition = function() {
       return FadeTransition;
   };
+
+  // mobile av
+  function hideNav() {
+    $('.header').removeClass('is-menu');
+    $('.js-mob-nav').removeClass('is-open');
+    $('.js-humb').removeClass('is-active');
+  }
+  function showNav() {
+    $('.header').addClass('is-menu');
+    $('.js-mob-nav').addClass('is-open');
+    $('.js-humb').addClass('is-active');
+  }
+  $('.js-humb').on('click', function () {
+    if($(this).hasClass('is-active')) {
+      hideNav();
+    } else {
+      showNav();
+    }
+  });
 
 });

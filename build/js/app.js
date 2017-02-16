@@ -26,27 +26,40 @@ webpackJsonp([0,1],[
 	    namespace: 'homepage',
 	    onEnter: function onEnter() {
 	      wrapper.addClass('is-homepage');
+	      (0, _jquery2.default)('[data-title]').removeClass('active');
 	    },
 	    onLeave: function onLeave() {
-	      wrapper.removeClass('is-homepage');
+	
+	      setTimeout(function () {
+	        wrapper.removeClass('is-homepage');
+	      }, 350);
+	    },
+	    onLeaveCompleted: function onLeaveCompleted() {
+	      hideNav();
 	    }
 	  });
 	  var About = _barba2.default.BaseView.extend({
 	    namespace: 'about',
 	    onEnterCompleted: function onEnterCompleted() {
+	      (0, _jquery2.default)('[data-title]').removeClass('active');
+	      (0, _jquery2.default)('[data-title="about"]').addClass('active');
 	      _carousel2.default.init();
 	    },
 	    onLeave: function onLeave() {
 	      _carousel2.default.destroy();
+	      hideNav();
 	    }
 	  });
 	  var Opinions = _barba2.default.BaseView.extend({
 	    namespace: 'opinions',
 	    onEnterCompleted: function onEnterCompleted() {
 	      _carousel2.default.init();
+	      (0, _jquery2.default)('[data-title]').removeClass('active');
+	      (0, _jquery2.default)('[data-title="opinions"]').addClass('active');
 	    },
 	    onLeave: function onLeave() {
 	      _carousel2.default.destroy();
+	      hideNav();
 	    }
 	  });
 	  var Portfolio = _barba2.default.BaseView.extend({
@@ -54,18 +67,22 @@ webpackJsonp([0,1],[
 	    onEnterCompleted: function onEnterCompleted() {
 	      _carousel2.default.init();
 	      var modal = new _Modal.Modal();
+	      (0, _jquery2.default)('[data-title]').removeClass('active');
+	      (0, _jquery2.default)('[data-title="portfolio"]').addClass('active');
 	    },
 	    onLeave: function onLeave() {
 	      _carousel2.default.destroy();
+	      hideNav();
 	    }
 	  });
 	  var Contacts = _barba2.default.BaseView.extend({
 	    namespace: 'contacts',
-	    onEnter: function onEnter() {
-	      // some code here
+	    onEnterCompleted: function onEnterCompleted() {
+	      (0, _jquery2.default)('[data-title]').removeClass('active');
+	      (0, _jquery2.default)('[data-title="contacts"]').addClass('active');
 	    },
 	    onLeave: function onLeave() {
-	      // some code here
+	      hideNav();
 	    }
 	  });
 	
@@ -128,6 +145,25 @@ webpackJsonp([0,1],[
 	  _barba2.default.Pjax.getTransition = function () {
 	    return FadeTransition;
 	  };
+	
+	  // mobile av
+	  function hideNav() {
+	    (0, _jquery2.default)('.header').removeClass('is-menu');
+	    (0, _jquery2.default)('.js-mob-nav').removeClass('is-open');
+	    (0, _jquery2.default)('.js-humb').removeClass('is-active');
+	  }
+	  function showNav() {
+	    (0, _jquery2.default)('.header').addClass('is-menu');
+	    (0, _jquery2.default)('.js-mob-nav').addClass('is-open');
+	    (0, _jquery2.default)('.js-humb').addClass('is-active');
+	  }
+	  (0, _jquery2.default)('.js-humb').on('click', function () {
+	    if ((0, _jquery2.default)(this).hasClass('is-active')) {
+	      hideNav();
+	    } else {
+	      showNav();
+	    }
+	  });
 	});
 
 /***/ },

@@ -1,11 +1,19 @@
 // styles
 .center
-	position: relative
-	width: 50%
-	margin: 0 auto
-	height: 100%
-	background: rgba($lightblue, 0.2)
-	z-index: 9
+  position: absolute
+  left: 25%
+  width: 50%
+  margin: 0 auto
+  height: 100%
+  background: rgba($lightblue, 0.2)
+  z-index: 9
+  +r(768)
+    top: auto
+    left: 0
+    bottom: 18px
+    width: 100%
+    height: auto
+    background: none
 .container
   position: absolute
   top: 100px
@@ -19,7 +27,16 @@
   z-index: 10
   +rh(700)
     top: 70px
+    padding-top: 0
     bottom: 70px
+  +r(768)
+    top: 0!important
+    padding-top: 70px!important
+    bottom: 0!important
+    width: 100%
+    max-width: 100%
+    box-shadow: none
+
 .section
   position: absolute
   top: 0
@@ -29,8 +46,7 @@
   .section__in
     position: relative
     height: 100%
-    padding: 7% 15% 4%
-    overflow: hidden
+    padding: 0 15%
     +vertical
     &:after
       content: attr(data-title)
@@ -44,9 +60,18 @@
       text-transform: uppercase
       font-weight: bold
       line-height: 1
-  +rh(700)
+  +r(768)
+    padding: 70px 0 0
+  +r(480)
     .section__in
-      padding: 2% 15%
+      padding: 0 10px
+      &:after
+        bottom: auto
+        top: -45px
+        left: 50%
+        font-size: 20px
+        color: $text-color-dark
+        transform: translateX(-50%)
 .title
 	text-align: center
 	font-size: 2.4rem
@@ -55,37 +80,88 @@
 
 // start
 .start
-	position: absolute
-	top: 40px
-	bottom: 40px
-	left: 40px
-	right: 40px
-	border: 4px solid #bddcff
-	text-align: center
-	&:before
-		content: ""
-		position: absolute
-		top: 50%
-		left: 50%
-		width: 110px
-		margin-top: -2px
-		margin-left: -55px
-		height: 4px
-		background: $border
-  +rh(700)
+  position: absolute
+  top: 40px
+  bottom: 40px
+  left: 40px
+  right: 40px
+  border: 4px solid #bddcff
+  text-align: center
+  &:after
+    content: ""
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 110px
+    margin-top: -2px
+    margin-left: -55px
+    height: 4px
+    background: $border
+  +rh(600)
+    top: 20px
+    bottom: 20px
+    left: 20px
+    right: 20px
     &:before
-      top: 52%
-	.start__title
-		position: absolute
-		bottom: 27%
-		left: 0
-		right: 0
-	.start__btn
-		position: absolute
-		bottom: 0
-		left: 0
-		right: 0
-		height: 19%
+      top: 55%
+  +r(768)
+    +vertical
+    border: none
+    &:after
+      display: none
+    .start__in
+      display: inline-block
+      vertical-align: middle
+  .start__logo
+    position: relative
+    display: none
+    margin-bottom: 40px
+    &:before
+      content: ""
+      position: absolute
+      bottom: -19px
+      left: 50%
+      width: 110px
+      margin-top: -2px
+      margin-left: -55px
+      height: 4px
+      background: $border
+    +r(768)
+      display: inline-block
+      svg
+        font-size: 10rem
+      p
+        font-size: 2.4rem
+        font-weight: bold
+        text-transform: uppercase
+  .start__title
+    position: absolute
+    bottom: 27%
+    left: 0
+    right: 0
+    +rh(600)
+      bottom: 21%
+      font-size: 2rem
+    +r(768)
+      position: relative
+      top: auto
+      bottom: auto
+      left: auto
+      right: auto
+      margin-bottom: 25px
+  .start__btn
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 19%
+    +r(768)
+      position: relative
+      top: auto
+      bottom: auto
+      left: auto
+      right: auto
+      height: auto
 .btn
   display: inline-block
   width: 160px
@@ -109,6 +185,8 @@
     position: relative
     height: 100%
     font-size: 16px
+    +r(480)
+      padding: 0 10px
 .prev, .next
 	position: absolute
 	top: 50%
@@ -120,10 +198,15 @@
 	&:hover
 		color: $text-color-dark
 .prev
-	left: -20px
+  left: -20px
+  +r(480)
+    left: -5px
 .next
-	right: -20px
+  right: -20px
+  +r(480)
+    right: -5px
 .slider-wrap
+  padding-bottom: 40px
   height: 100%
   opacity: 0
   visibility: hidden
@@ -171,56 +254,73 @@
     padding: 0 5%
     text-align: left
     font-size: 1.6rem
+    +r(480)
+      font-size: 1.4rem
+      padding: 0 3%
   .slider__mid
     max-width: 240px
     margin: 0 auto
     font-size: 1.6rem
 .counter
   position: absolute
-  top: -5%
-  right: -7%
+  top: -66px
+  right: -90px
   color: $border
   font-size: 4.6rem
   line-height: 1
-  transform-origin: 100% 0
+  transform-origin: 100% 100%
   transform: rotate(-90deg)
   .counter__current
     font-size: 8rem
-  +rh(700)
-    top: 0
-  +rh(768)
-    top: -10%
-  +rh(960)
-    top: -8%
-
+  +r(768)
+    right: -100px
+  +r(680)
+    right: -90px
+  +r(600)
+    right: -80px
+  +r(568)
+    right: -70px
+  +r(480)
+    display: none!important
 
 .socials
-	font-size: 0
-	& > li
-		display: inline-block
-		vertical-align: middle
-		margin: 0 20px
-	.socials__link
-		display: inline-block
-		width: 60px
-		height: 60px
-		line-height: 72px
-		border-radius: 50%
-		background: $text-color
-		color: $main
-		text-align: center
-		transition: background 300ms
-		&:hover
-			background: $text-color-dark
-		.icon
-			+gpu
-		.icon-fb
-			font-size: 18px
-		.icon-tw, .icon-in
-			font-size: 16px
-		.icon-pinterest, .icon-tumblr
-			font-size: 22px
+  font-size: 0
+  & > li
+    display: inline-block
+    vertical-align: middle
+    margin: 0 20px
+    +r(1024)
+      margin: 0 10px
+    +r(360)
+      margin: 0 6px
+  .socials__link
+    display: inline-block
+    width: 60px
+    height: 60px
+    line-height: 72px
+    border-radius: 50%
+    background: $text-color
+    color: $main
+    text-align: center
+    transition: background 300ms
+    &:hover
+      background: $text-color-dark
+    .icon
+      +gpu
+    .icon-fb
+      font-size: 18px
+    .icon-tw, .icon-in
+      font-size: 16px
+    .icon-pinterest, .icon-tumblr
+      font-size: 22px
       margin-top: 18px
+    +r(600)
+      width: 40px
+      height: 40px
+      line-height: 55px
+      .icon-pinterest, .icon-tumblr
+        margin-top: 11px
+        font-size: 18px
 
 
 // contacts
