@@ -73,10 +73,12 @@
         color: $text-color-dark
         transform: translateX(-50%)
 .title
-	text-align: center
-	font-size: 2.4rem
-	text-transform: uppercase
-	color: $text-color-dark
+  text-align: center
+  font-size: 2.4rem
+  text-transform: uppercase
+  color: $text-color-dark
+  +r(480)
+    font-size: 2rem
 
 // start
 .start
@@ -231,16 +233,23 @@
     width: 150px
     height: 150px
     border-radius: 50%
-    background: $text-color
     margin: 0 auto 5%
     img
       width: 150px
       height: 150px
       object-fit: cover
+    +r(480)
+      width: 100px
+      height: 100px
+      img
+        width: 100px
+        height: 100px
   .slider__topper
     position: relative
     text-transform: uppercase
     font-size: 2.4rem
+    +r(480)
+      font-size: 2rem
   .slider__title
     font-weight: bold
   .slider__content
@@ -335,12 +344,16 @@
     font-size: 2.4rem
     color: $text-color
     font-weight: normal
+    +r(480)
+      font-size: 2rem
 .form
-	max-width: 400px
-	margin: 30px auto
-	.form__row
-		display: block
-		margin-bottom: 10px
+  max-width: 400px
+  margin: 30px auto
+  .form__row
+    display: block
+    margin-bottom: 10px
+  +r(480)
+    margin: 20px auto
 .input, .textarea
 	width: 100%
 	border: 2px solid $lightblue
@@ -367,6 +380,10 @@
     width: 50%
     height: 50%
     padding: 15px
+    +r(480)
+      padding: 7px
+    +r(360)
+      height: 40%
   .portfolio__link
     position: relative
     display: block
@@ -393,6 +410,7 @@
   .portfolio__block
     position: relative
     height: 100%
+    padding: 10px
     +vertical
     img
       display: inline-block
@@ -407,6 +425,18 @@
         font-size: 74px
       &.icon-behance
         font-size: 60px
+      +r(480)
+        font-size: 60px
+        &.icon-dribbble
+          font-size: 64px
+        &.icon-behance
+          font-size: 50px
+      +r(360)
+        font-size: 40px
+        &.icon-dribbble
+          font-size: 44px
+        &.icon-behance
+          font-size: 30px
   .portfolio__title
     position: absolute
     bottom: 5%
@@ -415,5 +445,10 @@
     font-size: 16px
     color: #07386e
     transition: color 300ms
+    +r(480)
+      font-size: 14px
+      line-height: 1.2
+    +r(360)
+      font-size: 13px
 
 

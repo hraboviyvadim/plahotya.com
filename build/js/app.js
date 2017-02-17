@@ -21,6 +21,14 @@ webpackJsonp([0,1],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _jquery2.default)(document).ready(function () {
+	
+	  var isTouchDevice = function isTouchDevice() {
+	    return 'ontouchstart' in window || !!navigator.msMaxTouchPoints;
+	  };
+	  if (isTouchDevice) {
+	    (0, _jquery2.default)('html').addClass('is-touch');
+	  }
+	
 	  var wrapper = (0, _jquery2.default)('.js-wrapper');
 	  var Homepage = _barba2.default.BaseView.extend({
 	    namespace: 'homepage',

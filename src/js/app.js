@@ -5,6 +5,12 @@ import carousel from './carousel';
 import {Modal} from './Modal';
 
 $(document).ready(function () {
+
+  const isTouchDevice = () => 'ontouchstart' in window || !!(navigator.msMaxTouchPoints);
+  if(isTouchDevice) {
+    $('html').addClass('is-touch');
+  }
+
   let wrapper = $('.js-wrapper');
   const Homepage = Barba.BaseView.extend({
     namespace: 'homepage',
