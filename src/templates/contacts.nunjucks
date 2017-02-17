@@ -16,14 +16,17 @@ title: Plakhotia
                         <hr class="divide">
                         <p>or fill out this form to get in touch.</p>
                         <div class="form">
-                            <form action="#">
-                                <label class="form__row">
-                                    <input type="text" class="input" placeholder="Email Address">
-                                </label>
-                                <label class="form__row">
-                                    <textarea class="textarea" rows="5" placeholder="Project Description"></textarea>
-                                </label>
-                                <button class="btn">submit</button>
+                            <form action="https://formspree.io/hraboviyvadim@gmail.com" method="POST">
+                              <input type="text" name="_gotcha" style="display:none" />
+                              <input type="hidden" name="_subject" value="Сообщение с вашего сайта" />
+                              <input type="hidden" name="_next" value="http://localhost:8080/contacts.html" />
+                              <label class="form__row">
+                                  <input type="text" class="input" placeholder="Email Address" name="clientEmail">
+                              </label>
+                              <label class="form__row">
+                                  <textarea class="textarea" rows="5" placeholder="Project Description" name="clientMessage"></textarea>
+                              </label>
+                              <button class="btn" type="submit">submit</button>
                             </form>
                         </div>
                     </div>
