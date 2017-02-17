@@ -91,12 +91,12 @@ title: Plakhotia
               <!-- navigation arrows-->
               <button type="button" class="prev js-slider-prev">{{ mixins.icon('left') }}</button>
               <button type="button" class="next js-slider-next">{{ mixins.icon('right') }}</button>
-              <!-- counter -->
-              <div class="counter">
-                <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
-              </div>
             </div>
           </div>
+        </div>
+        <!-- counter -->
+        <div class="counter">
+          <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
         </div>
       </div>
     </section>

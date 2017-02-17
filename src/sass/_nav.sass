@@ -76,6 +76,9 @@
         left: 100%
         transform: translateX(-120px) rotate(-90deg)
         transform-origin: 0 0
+  +rh(480)
+    .nav__menu
+      margin-top: 0
   +r(768)
     position: fixed
     top: 0
@@ -195,6 +198,7 @@
     top: 25px
     transition: transform 300ms
   &.is-active
+    position: fixed
     span
       opacity: 0
     &:before

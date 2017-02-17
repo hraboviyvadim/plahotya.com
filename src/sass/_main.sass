@@ -60,6 +60,14 @@
       text-transform: uppercase
       font-weight: bold
       line-height: 1
+  +rh(768)
+    .section__in
+      &:after
+        bottom: -10% !important
+  +rh(1024)
+    .section__in
+      &:after
+        bottom: -6%
   +r(768)
     padding: 70px 0 0
   +r(480)
@@ -216,6 +224,8 @@
   &.loaded
     opacity: 1
     visibility: visible
+  +rh(1024)
+    padding-bottom: 30px
 .slider
   height: 100%
   .slider__item
@@ -272,8 +282,8 @@
     font-size: 1.6rem
 .counter
   position: absolute
-  top: -66px
-  right: -90px
+  top: -62px
+  right: 0
   color: $border
   font-size: 4.6rem
   line-height: 1
@@ -281,14 +291,6 @@
   transform: rotate(-90deg)
   .counter__current
     font-size: 8rem
-  +r(768)
-    right: -100px
-  +r(680)
-    right: -90px
-  +r(600)
-    right: -80px
-  +r(568)
-    right: -70px
   +r(480)
     display: none!important
 
@@ -380,10 +382,13 @@
     width: 50%
     height: 50%
     padding: 15px
+    +rh(1024)
+      height: 40%
+    +r(768)
+      height: 40%
     +r(480)
       padding: 7px
-    +r(360)
-      height: 40%
+
   .portfolio__link
     position: relative
     display: block
@@ -425,13 +430,17 @@
         font-size: 74px
       &.icon-behance
         font-size: 60px
-      +r(480)
+    +r(768)
+      padding: 10px 30px
+    +r(480)
+      .icon
         font-size: 60px
         &.icon-dribbble
           font-size: 64px
         &.icon-behance
           font-size: 50px
-      +r(360)
+    +r(360)
+      .icon
         font-size: 40px
         &.icon-dribbble
           font-size: 44px
