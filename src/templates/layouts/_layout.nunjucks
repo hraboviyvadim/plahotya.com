@@ -33,7 +33,7 @@
 <!-- BEGIN modals -->
 <div class="overlay js-overlay" style="display: none;">
     <div class="modal js-modal">
-      <button class="modal__close js-modal-close">close {{ mixins.icon('close') }}</button>
+      <button class="modal__close js-modal-close">{{ mixins.icon('close') }}</button>
       <div class="modal__in">
         <div class="modal__img js-modal-img"></div>
       </div>
