@@ -159,4 +159,29 @@ $(document).ready(function () {
     }
   });
 
+  // contacs form submit
+  $('#contactForm').on('submit', function (e) {
+    e.preventDefault();
+    const url = $(this).attr('action');
+    const clientEmail = $(this).find('.input').val();
+    const clientMessage = $(this).find('.textarea').val();
+    const data = {
+      f: 'Message from your site!',
+      email: clientEmail,
+      message: clientMessage
+    };
+
+    $.post({
+      url: url,
+      data: data,
+      success: function (result) {
+        console.log(JSON.parse(result));
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr);
+      }
+    });
+
+  });
+
 });

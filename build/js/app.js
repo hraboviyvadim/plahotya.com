@@ -172,6 +172,30 @@ webpackJsonp([0,1],[
 	      showNav();
 	    }
 	  });
+	
+	  // contacs form submit
+	  (0, _jquery2.default)('#contactForm').on('submit', function (e) {
+	    e.preventDefault();
+	    var url = (0, _jquery2.default)(this).attr('action');
+	    var clientEmail = (0, _jquery2.default)(this).find('.input').val();
+	    var clientMessage = (0, _jquery2.default)(this).find('.textarea').val();
+	    var data = {
+	      f: 'Message from your site!',
+	      email: clientEmail,
+	      message: clientMessage
+	    };
+	
+	    _jquery2.default.post({
+	      url: url,
+	      data: data,
+	      success: function success(result) {
+	        console.log(JSON.parse(result));
+	      },
+	      error: function error(xhr, ajaxOptions, thrownError) {
+	        console.log(xhr);
+	      }
+	    });
+	  });
 	});
 
 /***/ },
