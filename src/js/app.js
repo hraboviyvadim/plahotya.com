@@ -166,7 +166,7 @@ $(document).ready(function () {
     const clientEmail = $(this).find('.input').val();
     const clientMessage = $(this).find('.textarea').val();
     const data = {
-      f: 'Message from your site!',
+      f: 'new_message',
       email: clientEmail,
       message: clientMessage
     };

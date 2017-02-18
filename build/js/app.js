@@ -180,7 +180,7 @@ webpackJsonp([0,1],[
 	    var clientEmail = (0, _jquery2.default)(this).find('.input').val();
 	    var clientMessage = (0, _jquery2.default)(this).find('.textarea').val();
 	    var data = {
-	      f: 'Message from your site!',
+	      f: 'new_message',
 	      email: clientEmail,
 	      message: clientMessage
 	    };
