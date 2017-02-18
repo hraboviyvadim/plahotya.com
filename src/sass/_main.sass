@@ -198,15 +198,16 @@
     +r(480)
       padding: 0 10px
 .prev, .next
-	position: absolute
-	top: 50%
-	transform: translateY(-50%)
-	background: none
-	font-size: 28px
-	color: $border
-	transition: color 300ms
-	&:hover
-		color: $text-color-dark
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  background: none
+  font-size: 28px
+  color: $border
+  transition: color 300ms
+  z-index: 2
+  &:hover
+    color: $text-color-dark
 .prev
   left: -20px
   +r(480)
@@ -226,6 +227,7 @@
     visibility: visible
   +rh(1024)
     padding-bottom: 30px
+    padding-top: 30px
 .slider
   height: 100%
   .slider__item
@@ -364,6 +366,9 @@
 	color: $text-color-dark
 	+placeholder
 		color: $text-color-dark
+  &:focus
+    +placeholder
+      font-size: 0
 .input
 	height: 42px
 	padding: 0 10px
@@ -383,8 +388,8 @@
     width: 50%
     height: 50%
     padding: 15px
-    +rh(1024)
-      height: 40%
+    //+rh(1024)
+    //  height: 40%
     +r(768)
       height: 40%
     +r(480)
