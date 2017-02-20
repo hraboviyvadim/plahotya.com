@@ -8,22 +8,22 @@ title: Plakhotia
     <div class="container" id="barba-wrapper">
         <!-- about page -->
         <section class="section barba-container" data-namespace="contacts">
-            <div class="section__in" data-title="contacts">
+            <div class="section__in" data-title="contact">
                 <div class="contacts">
                     <div class="contacts__in">
                         <div class="title">write to</div>
-                        <h1 class="contacts__mail">mail@plahotya.com</h1>
+                        <h1 class="contacts__mail"><a href="mailto:mail@plahotya.com">mail@plahotya.com</a></h1>
                         <hr class="divide">
                         <p>or fill out this form to get in touch.</p>
                         <div class="form">
-                            <form id="contactForm" action="https://script.google.com/macros/s/AKfycbybiYLI6VgxqWhvPHHyomCTz1nMu_YphBpuhmSX9Z3coPcRyN8/exec" method="POST">
+                            <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyKMDUOWz7EucxGTEojTLCYHii3v55eG6lL9eo-4iDvhX5eOGaT/exec" method="POST">
                               <label class="form__row">
                                   <input type="text" class="input" placeholder="Email Address" name="clientEmail">
                               </label>
                               <label class="form__row">
                                   <textarea class="textarea" rows="5" placeholder="Project Description" name="clientMessage"></textarea>
                               </label>
-                              <button class="btn" type="submit">submit</button>
+                              <button class="btn btn_submit" type="submit"><span>submit</span>{{ mixins.icon('check') }}</button>
                             </form>
                         </div>
                     </div>

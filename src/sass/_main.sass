@@ -173,6 +173,7 @@
       right: auto
       height: auto
 .btn
+  position: relative
   display: inline-block
   width: 160px
   height: 46px
@@ -184,6 +185,20 @@
   transition: background 300ms
   &:hover
     background: $text-color-dark
+  .icon-check
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: #fff
+    opacity: 0
+  &.success
+    background: green
+    color: transparent
+    .icon-check
+      opacity: 1
+  &.error
+    background: red
 
 // about
 .about
@@ -360,15 +375,20 @@
   +r(480)
     margin: 20px auto
 .input, .textarea
-	width: 100%
-	border: 2px solid $lightblue
-	font-size: 16px
-	color: $text-color-dark
-	+placeholder
-		color: $text-color-dark
+  width: 100%
+  border: 2px solid $lightblue
+  font-size: 16px
+  color: $text-color-dark
+  transition: border-color 300ms
+  +placeholder
+    color: $text-color-dark
   &:focus
     +placeholder
       font-size: 0
+  &.error
+    border-color: red
+  &:-webkit-autofill
+    box-shadow: 0 0 0 1000px white inset
 .input
 	height: 42px
 	padding: 0 10px

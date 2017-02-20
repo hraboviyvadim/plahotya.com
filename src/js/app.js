@@ -139,27 +139,64 @@ $(document).ready(function () {
     }
   });
 
+  function emailValidation(str) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
+  }
+
   // contacs form submit
   $('#contactForm').on('submit', function (e) {
     e.preventDefault();
+    const _this = $(this);
     const url = $(this).attr('action');
-    const clientEmail = $(this).find('.input').val();
-    const clientMessage = $(this).find('.textarea').val();
-    const data = {
-      f: 'new_message',
-      email: clientEmail,
-      message: clientMessage
-    };
-    $.post({
-      url: url,
-      data: data,
-      success: function (result) {
-        console.log(JSON.parse(result));
-      },
-      error: function (xhr, ajaxOptions, thrownError) {
-        console.log(xhr);
-      }
-    });
+    const input = $(this).find('.input');
+    const textarea = $(this).find('.textarea');
+
+    const clientEmail = input.val();
+    const clientMessage = textarea.val();
+
+    input.removeClass('error');
+    textarea.removeClass('error');
+
+    if(!emailValidation(clientEmail)) {
+      input.addClass('error');
+      setTimeout(() => {
+        input.removeClass('error');
+      }, 1000);
+    }
+
+    if(!clientMessage.trim().length) {
+      textarea.addClass('error');
+      setTimeout(() => {
+        textarea.removeClass('error');
+      }, 1100);
+    }
+    if (emailValidation(clientEmail) && clientMessage.trim().length) {
+      const data = {
+        f: 'new_message',
+        email: clientEmail,
+        message: clientMessage
+      };
+      _this.find('.btn span').text('Loading...');
+      $.post({
+        url: url,
+        data: data,
+        success: function (result) {
+          _this.find('.btn').addClass('success');
+          setTimeout(() => {
+            _this.find('.btn').removeClass('success');
+            _this.find('.btn span').text('submit');
+          }, 2000);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+          _this.find('.btn').addClass('error');
+          _this.find('.btn span').text('try again');
+          setTimeout(() => {
+            _this.find('.btn').removeClass('error');
+            _this.find('.btn span').text('submit');
+          }, 2000);
+        }
+      });
+    }
   });
 
 });
