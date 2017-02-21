@@ -243,6 +243,8 @@
   +rh(1024)
     padding-bottom: 30px
     padding-top: 30px
+  +r(768)
+    padding-top: 0!important
 .slider
   height: 100%
   .slider__item
@@ -357,6 +359,7 @@
   width: 100%
   display: inline-block
   vertical-align: middle
+  padding-top: 10px
   text-align: center
   font-size: 16px
   .contacts__mail
@@ -364,7 +367,10 @@
     font-size: 2.4rem
     color: $text-color
     font-weight: normal
-    +r(480)
+  +r(768)
+    padding-top: 0
+  +r(480)
+    .contacts__mail
       font-size: 2rem
 .form
   max-width: 400px
