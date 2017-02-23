@@ -5,6 +5,7 @@ import slick from 'slick-carousel';
 export default {
   init: function () {
     let carousel = $('.js-slider'),
+      counter = $('.js-slider-counter'),
       counterTotal = $('.js-slider-total'),
       counterCurrent = $('.js-slider-current');
 
@@ -14,6 +15,7 @@ export default {
       counterTotal.text(slidesTotal);
       counterCurrent.text(slideCurrent);
       carousel.parent().addClass('loaded');
+      counter.addClass('loaded');
 
       setTimeout(function () {
         let useElement = $('.js-slider').find('use');

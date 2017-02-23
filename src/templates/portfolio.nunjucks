@@ -95,7 +95,7 @@ title: Plakhotia
           </div>
         </div>
         <!-- counter -->
-        <div class="counter">
+        <div class="counter js-slider-counter">
           <span class="counter__current js-slider-current"></span> / <span class="js-slider-total"></span>
         </div>
       </div>

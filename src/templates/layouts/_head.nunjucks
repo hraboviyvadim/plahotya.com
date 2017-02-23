@@ -4,10 +4,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="theme-color" content="#fff">
 <meta name="format-detection" content="telephone=no">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <link rel="stylesheet" media="all" href="css/style.css">
-<script src="js/vendors/picturefill.min.js"></script>
-<script src="js/vendors/polyfill.object-fit.min.js"></script>
 <!--[if lt IE 9]>
     <script src="js/vendors/html5shiv.js"></script>
 <![endif]-->
+<style>
+  #preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 999;
+  }
+  #preloader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+  }
+</style>

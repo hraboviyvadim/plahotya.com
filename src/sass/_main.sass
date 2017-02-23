@@ -310,6 +310,12 @@
   transform-origin: 100% 100%
   transform: rotate(-90deg)
   will-change: opacity
+  opacity: 0
+  visibility: hidden
+  transition: opacity 300ms
+  &.loaded
+    opacity: 1
+    visibility: visible
   .counter__current
     font-size: 8rem
   +r(480)

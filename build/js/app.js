@@ -22,6 +22,9 @@ webpackJsonp([0,1],[
 	
 	(0, _jquery2.default)(document).ready(function () {
 	
+	  var preloader = document.getElementById('preloader');
+	  preloader.style.display = 'none';
+	
 	  var isTouchDevice = function isTouchDevice() {
 	    return 'ontouchstart' in window || !!navigator.msMaxTouchPoints;
 	  };
@@ -104,12 +107,10 @@ webpackJsonp([0,1],[
 	
 	  var FadeTransition = _barba2.default.BaseTransition.extend({
 	    start: function start() {
-	
 	      Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
 	    },
 	
 	    fadeOut: function fadeOut() {
-	
 	      return (0, _jquery2.default)(this.oldContainer).animate({ opacity: 0 }).promise();
 	    },
 	
@@ -12179,6 +12180,7 @@ webpackJsonp([0,1],[
 	exports.default = {
 	  init: function init() {
 	    var carousel = (0, _jquery2.default)('.js-slider'),
+	        counter = (0, _jquery2.default)('.js-slider-counter'),
 	        counterTotal = (0, _jquery2.default)('.js-slider-total'),
 	        counterCurrent = (0, _jquery2.default)('.js-slider-current');
 	
@@ -12188,6 +12190,7 @@ webpackJsonp([0,1],[
 	      counterTotal.text(slidesTotal);
 	      counterCurrent.text(slideCurrent);
 	      carousel.parent().addClass('loaded');
+	      counter.addClass('loaded');
 	
 	      setTimeout(function () {
 	        var useElement = (0, _jquery2.default)('.js-slider').find('use');

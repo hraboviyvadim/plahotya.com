@@ -6,6 +6,9 @@ import {Modal} from './Modal';
 
 $(document).ready(function () {
 
+  const preloader = document.getElementById('preloader');
+  preloader.style.display = 'none';
+
   const isTouchDevice = () => 'ontouchstart' in window || !!(navigator.msMaxTouchPoints);
   if(isTouchDevice && $(window).width() <= 1024) {
     $('html').addClass('is-touch');
@@ -88,36 +91,34 @@ $(document).ready(function () {
 
   const FadeTransition = Barba.BaseTransition.extend({
   start: function() {
-
       Promise
           .all([this.newContainerLoading, this.fadeOut()])
           .then(this.fadeIn.bind(this));
   },
 
   fadeOut: function() {
-
-      return $(this.oldContainer).animate({ opacity: 0 }).promise();
+    return $(this.oldContainer).animate({ opacity: 0 }).promise();
   },
 
   fadeIn: function() {
-      let _this = this;
-      let $el = $(this.newContainer);
+    let _this = this;
+    let $el = $(this.newContainer);
 
-      $(this.oldContainer).hide();
+    $(this.oldContainer).hide();
 
-      $el.css({
-          visibility : 'visible',
-          opacity : 0
-      });
+    $el.css({
+      visibility : 'visible',
+      opacity : 0
+    });
 
-      $el.animate({ opacity: 1 }, 400, function() {
-          _this.done();
-      });
+    $el.animate({ opacity: 1 }, 400, function() {
+      _this.done();
+    });
   }
   });
 
   Barba.Pjax.getTransition = function() {
-      return FadeTransition;
+    return FadeTransition;
   };
 
   // mobile av
