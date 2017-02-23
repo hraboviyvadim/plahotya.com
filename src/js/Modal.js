@@ -25,13 +25,7 @@ export class Modal {
   open(href, text){
     this.overlay.show();
     this.img.html(`
-      <picture>
-        <source srcset="${href}.jpg" media="(min-width: 1025px)">
-        <source srcset="${href}-ipad.jpg" media="(min-width: 769px)">
-        <source srcset="${href}-tablet.jpg" media="(min-width: 361px)">
-        <source srcset="${href}-mobile.jpg" media="(max-width: 360px)">
-        <img src="${href}.jpg" alt="${text}">
-      </picture>
+      <img src="${href}.jpg" alt="${text}">
     `);
 
     this.img.find('img').on('load', () => {

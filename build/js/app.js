@@ -15176,7 +15176,7 @@ webpackJsonp([0,1],[
 	      var _this3 = this;
 	
 	      this.overlay.show();
-	      this.img.html('\n      <picture>\n        <source srcset="' + href + '.jpg" media="(min-width: 1025px)">\n        <source srcset="' + href + '-ipad.jpg" media="(min-width: 769px)">\n        <source srcset="' + href + '-tablet.jpg" media="(min-width: 361px)">\n        <source srcset="' + href + '-mobile.jpg" media="(max-width: 360px)">\n        <img src="' + href + '.jpg" alt="' + text + '">\n      </picture>\n    ');
+	      this.img.html('\n      <img src="' + href + '.jpg" alt="' + text + '">\n    ');
 	
 	      this.img.find('img').on('load', function () {
 	        _this3.modal.addClass('open');
