@@ -21,6 +21,12 @@ export class Modal {
     this.closeBtn.on('click', () => {
       this.close();
     });
+    this.overlay.on('click', function () {
+      _this.close();
+    });
+    this.modal.on('click', function (e) {
+      e.stopPropagation();
+    });
   }
   open(href, text){
     this.overlay.show();

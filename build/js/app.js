@@ -15169,6 +15169,12 @@ webpackJsonp([0,1],[
 	      this.closeBtn.on('click', function () {
 	        _this2.close();
 	      });
+	      this.overlay.on('click', function () {
+	        _this.close();
+	      });
+	      this.modal.on('click', function (e) {
+	        e.stopPropagation();
+	      });
 	    }
 	  }, {
 	    key: 'open',
