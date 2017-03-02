@@ -32,6 +32,15 @@ webpackJsonp([0,1],[
 	    (0, _jquery2.default)('html').addClass('is-touch');
 	  }
 	
+	  // show preloader between inner pages
+	  var section = (0, _jquery2.default)('.section');
+	  var addPreloader = function addPreloader() {
+	    section.addClass('is-loading');console.log('add preloader');
+	  };
+	  var removePreloader = function removePreloader() {
+	    section.removeClass('is-loading');console.log('remove preloader');
+	  };
+	
 	  var wrapper = (0, _jquery2.default)('.js-wrapper');
 	  var Homepage = _barba2.default.BaseView.extend({
 	    namespace: 'homepage',
@@ -40,7 +49,6 @@ webpackJsonp([0,1],[
 	      (0, _jquery2.default)('[data-title]').removeClass('active');
 	    },
 	    onLeave: function onLeave() {
-	
 	      setTimeout(function () {
 	        wrapper.removeClass('is-homepage');
 	      }, 350);
@@ -111,6 +119,7 @@ webpackJsonp([0,1],[
 	    },
 	
 	    fadeOut: function fadeOut() {
+	      addPreloader();
 	      return (0, _jquery2.default)(this.oldContainer).animate({ opacity: 0 }).promise();
 	    },
 	
@@ -124,7 +133,7 @@ webpackJsonp([0,1],[
 	        visibility: 'visible',
 	        opacity: 0
 	      });
-	
+	      removePreloader();
 	      $el.animate({ opacity: 1 }, 400, function () {
 	        _this.done();
 	      });

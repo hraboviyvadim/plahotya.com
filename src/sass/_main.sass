@@ -43,6 +43,23 @@
   bottom: 0
   right: 0
   left: 0
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background: #fff url(../img/preloader.gif) 50% 50% no-repeat
+    background-size: 60px 60px
+    opacity: 0
+    visibility: hidden
+    transition: opacity 300ms
+    z-index: 9
+  &.is-loading
+    &:before
+      opacity: 1
+      visibility: visible
   .section__in
     position: relative
     height: 100%

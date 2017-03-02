@@ -14,6 +14,11 @@ $(document).ready(function () {
     $('html').addClass('is-touch');
   }
 
+  // show preloader between inner pages
+  const section = $('.section');
+  const addPreloader = () => { section.addClass('is-loading'); console.log('add preloader'); };
+  const removePreloader = () => { section.removeClass('is-loading'); console.log('remove preloader'); };
+
   let wrapper = $('.js-wrapper');
   const Homepage = Barba.BaseView.extend({
     namespace: 'homepage',
@@ -22,7 +27,6 @@ $(document).ready(function () {
       $('[data-title]').removeClass('active');
     },
     onLeave: function() {
-
       setTimeout(function () {
         wrapper.removeClass('is-homepage');
       }, 350);
@@ -40,9 +44,9 @@ $(document).ready(function () {
       carousel.init();
       },
     onLeave: function() {
-        carousel.destroy();
+      carousel.destroy();
       hideNav();
-      }
+    }
   });
   const Opinions = Barba.BaseView.extend({
     namespace: 'opinions',
@@ -97,6 +101,7 @@ $(document).ready(function () {
   },
 
   fadeOut: function() {
+    addPreloader();
     return $(this.oldContainer).animate({ opacity: 0 }).promise();
   },
 
@@ -110,7 +115,7 @@ $(document).ready(function () {
       visibility : 'visible',
       opacity : 0
     });
-
+    removePreloader();
     $el.animate({ opacity: 1 }, 400, function() {
       _this.done();
     });
