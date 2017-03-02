@@ -133,8 +133,9 @@ webpackJsonp([0,1],[
 	        visibility: 'visible',
 	        opacity: 0
 	      });
-	      removePreloader();
+	
 	      $el.animate({ opacity: 1 }, 400, function () {
+	        removePreloader();
 	        _this.done();
 	      });
 	    }
