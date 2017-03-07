@@ -77,7 +77,7 @@ $(document).ready(function () {
     namespace: 'contacts',
     onEnterCompleted: function() {
       $('[data-title]').removeClass('active');
-      $('[data-title="contacts"]').addClass('active');
+      $('[data-title="contact"]').addClass('active');
     },
     onLeave: function() {
       hideNav();

@@ -29,10 +29,15 @@ body
 
 
 .divide
-	width: 100px
-	height: 4px
-	margin: 25px auto
-	background: $lightblue
-	border: none
-	+r(480)
+  width: 100px
+  height: 4px
+  margin: 25px auto
+  background: $lightblue
+  border: none
+  .slider-wrap &
+    width: 0
+    transition: width 300ms 900ms
+  .slider-wrap.loaded &
+    width: 100px
+  +r(480)
     margin: 15px auto
