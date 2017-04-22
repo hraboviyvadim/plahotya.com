@@ -17,15 +17,16 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="slider__in">
                     <div class="slider__img">
-                      <img src="img/pasha.png" alt="">
+                      <img src="img/opinion-img-1.jpg" alt="">
                     </div>
                     <div class="slider__topper">
-                      <div class="slider__title">Pavel Malyuchkovs</div>
-                      <div class="slider__subtitle">Studio Floristic</div>
+                      <div class="slider__title">Janice Gilbert</div>
+                      <div class="slider__subtitle">Self-employed</div>
                     </div>
                     <hr class="divide">
                     <div class="slider__content">
-                      <p>Everything is done perfectly! Landing Design wholesalers established efficiently and harmoniously decorated. Under the guidance of the customer, Pavlo has prepared dozens of options for pages with different details...</p>
+                      <p>His ideas has navigated right into my heart.</p>
+                      <p>I think I'm crying. It's that clean. Your works looks appealing and magnificent.</p>
                     </div>
                   </div>
                 </div>
@@ -33,15 +34,15 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="slider__in">
                     <div class="slider__img">
-                      <img src="img/pasha.png" alt="">
+                      <img src="img/opinion-img-2.jpg" alt="">
                     </div>
                     <div class="slider__topper">
-                      <div class="slider__title">Pavel Malyuchkovs</div>
-                      <div class="slider__subtitle">Studio Floristic</div>
+                      <div class="slider__title">Alexander Leonov</div>
+                      <div class="slider__subtitle"><a href="www.skinomania.net">www.skinomania.net</a></div>
                     </div>
                     <hr class="divide">
                     <div class="slider__content">
-                      <p>Everything is done perfectly! Landing Design wholesalers established efficiently and harmoniously decorated. Under the guidance of the customer, Pavlo has prepared dozens of options for pages with different details...</p>
+                      <p>Pavlo is just a super performer! I strongly recommend that you work with him. Such a responsive and executive master has never met! Pavlo went to the meeting in absolutely everything. Always friendly, considerate and been in touch. From now on, I will always work with Pavlo. Great performer!</p>
                     </div>
                   </div>
                 </div>
@@ -49,15 +50,16 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="slider__in">
                     <div class="slider__img">
-                      <img src="img/pasha.png" alt="">
+                      <img src="img/opinion-img-3.jpg" alt="">
                     </div>
                     <div class="slider__topper">
-                      <div class="slider__title">Pavel Malyuchkovs</div>
-                      <div class="slider__subtitle">Studio Floristic</div>
+                      <div class="slider__title">Bulat Akhmetshin</div>
+                      <div class="slider__subtitle">Director in <a href="www.mediasimple.ru">www.mediasimple.ru</a></div>
                     </div>
                     <hr class="divide">
                     <div class="slider__content">
-                      <p>Everything is done perfectly! Landing Design wholesalers established efficiently and harmoniously decorated. Under the guidance of the customer, Pavlo has prepared dozens of options for pages with different details...</p>
+                      <p>Together we have already made several complex projects.
+                        Great designer with a fresh look. I liked the cooperation!</p>
                     </div>
                   </div>
                 </div>
@@ -65,15 +67,32 @@ title: Plakhotia
                 <div class="slider__item">
                   <div class="slider__in">
                     <div class="slider__img">
-                      <img src="img/pasha.png" alt="">
+                      <img src="img/opinion-img-4.jpg" alt="">
                     </div>
                     <div class="slider__topper">
-                      <div class="slider__title">Pavel Malyuchkovs</div>
-                      <div class="slider__subtitle">Studio Floristic</div>
+                      <div class="slider__title">Pavel Malyuchkov</div>
+                      <div class="slider__subtitle"><a href="www.studiofloristic.ru">www.studiofloristic.ru</a></div>
                     </div>
                     <hr class="divide">
                     <div class="slider__content">
-                      <p>Everything is done perfectly! Landing Design wholesalers established efficiently and harmoniously decorated. Under the guidance of the customer, Pavlo has prepared dozens of options for pages with different details...</p>
+                      <p>We have been working for the first time. We constantly cooperate. Everything suits me.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 5 -->
+                <div class="slider__item">
+                  <div class="slider__in">
+                    <div class="slider__img">
+                      <img src="img/opinion-img-5.jpg" alt="">
+                    </div>
+                    <div class="slider__topper">
+                      <div class="slider__title">and more than 100 reviews</div>
+                      <div class="slider__subtitle">from other customers</div>
+                    </div>
+                    <hr class="divide">
+                    <div class="slider__content">
+                      <p>Write me about your project or proposal</p>
+                      <div class="slider__footer"><a class="btn" href="contact.html">Contact</a></div>
                     </div>
                   </div>
                 </div>

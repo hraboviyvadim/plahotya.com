@@ -103,6 +103,9 @@
         font-size: 20px
         color: $text-color-dark
         transform: translateX(-50%)
+      &.active
+        &:after
+          transform: rotate(0) translate(-50%, 0)
 .title
   text-align: center
   font-size: 2.4rem
@@ -308,6 +311,7 @@
       width: 150px
       height: 150px
       object-fit: cover
+      border-radius: 50%
     +r(480)
       width: 100px
       height: 100px
@@ -356,6 +360,8 @@
     max-width: 240px
     margin: 0 auto
     font-size: 1.6rem
+  .slider__footer
+    padding-top: 10px
 .counter
   position: absolute
   top: -62px

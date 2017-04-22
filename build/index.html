@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <title>Plakhotia</title>
@@ -34,9 +33,10 @@
 
     </style>
   </head>
-
   <body>
-    <div id="preloader"><img src="img/preloader.gif" alt="loading..."></div>
+    <div id="preloader">
+      <img src="img/preloader.gif" alt="loading...">
+    </div>
 
     <!-- BEGIN content -->
     <div class="out js-wrapper is-homepage">
@@ -45,8 +45,8 @@
         <h1 class="logo">
           <a href="index.html">
             <svg class="icon icon-logo">
-    <use xlink:href="img/sprite.svg#icon-logo"></use>
-</svg>
+              <use xlink:href="img/sprite.svg#icon-logo"></use>
+            </svg>
 
             <p>pavlo</p>
             <p>plakhotia</p>
@@ -55,8 +55,8 @@
         <a href="index.html" class="mob-logo">
           <div class="mob-logo__img">
             <svg class="icon icon-logo">
-    <use xlink:href="img/sprite.svg#icon-logo"></use>
-</svg>
+              <use xlink:href="img/sprite.svg#icon-logo"></use>
+            </svg>
 
           </div>
         </a>
@@ -69,15 +69,17 @@
             <div class="start__in">
               <div class="start__logo">
                 <svg class="icon icon-logo">
-    <use xlink:href="img/sprite.svg#icon-logo"></use>
-</svg>
+                  <use xlink:href="img/sprite.svg#icon-logo"></use>
+                </svg>
 
                 <p>pavlo</p>
                 <p>plakhotia</p>
               </div>
               <div class="start__title title">
                 <p>i'm your</p>
-                <p><strong>UI/UX Designer</strong></p>
+                <p>
+                  <strong>UI/UX Designer</strong>
+                </p>
               </div>
               <div class="start__btn">
                 <a href="about.html" class="btn">about me</a>
@@ -89,10 +91,26 @@
       <!-- nav -->
       <nav class="nav js-mob-nav">
         <ul class="nav__menu">
-          <li><a href="about.html" class="nav__link top-left" data-title="about"><span>About</span></a></li>
-          <li><a href="portfolio.html" class="nav__link top-right" data-title="portfolio"><span>Portfolio</span></a></li>
-          <li><a href="opinions.html" class="nav__link bottom-left" data-title="opinions"><span>Opinions</span></a></li>
-          <li><a href="contact.html" class="nav__link bottom-right" data-title="contact"><span>Contact</span></a></li>
+          <li>
+            <a href="about.html" class="nav__link top-left" data-title="about">
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html" class="nav__link top-right" data-title="portfolio">
+              <span>Portfolio</span>
+            </a>
+          </li>
+          <li>
+            <a href="opinions.html" class="nav__link bottom-left" data-title="opinions">
+              <span>Opinions</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav__link bottom-right" data-title="contact">
+              <span>Contact</span>
+            </a>
+          </li>
         </ul>
         <!-- center -->
         <section class="center">
@@ -100,35 +118,47 @@
           <footer class="footer">
             <div class="footer__in">
               <ul class="footer__links">
-                <li><a href="https://dribbble.com/plahotya" target="_blank" class="no-barba" target="_blank"><svg class="icon icon-dribbble">
-    <use xlink:href="img/sprite.svg#icon-dribbble"></use>
-</svg>
-</a></li>
-                <li><a href="https://www.behance.net/plahotya" target="_blank" class="no-barba" target="_blank"><svg class="icon icon-behance">
-    <use xlink:href="img/sprite.svg#icon-behance"></use>
-</svg>
-</a></li>
-                <li><a href="https://www.instagram.com/pplahotya" target="_blank" class="no-barba" target="_blank"><svg class="icon icon-instagram">
-    <use xlink:href="img/sprite.svg#icon-instagram"></use>
-</svg>
-</a></li>
+                <li>
+                  <a href="https://dribbble.com/plahotya" target="_blank" class="no-barba" target="_blank">
+                    <svg class="icon icon-dribbble">
+                      <use xlink:href="img/sprite.svg#icon-dribbble"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.behance.net/plahotya" target="_blank" class="no-barba" target="_blank">
+                    <svg class="icon icon-behance">
+                      <use xlink:href="img/sprite.svg#icon-behance"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/pplahotya" target="_blank" class="no-barba" target="_blank">
+                    <svg class="icon icon-instagram">
+                      <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
               </ul>
               <p>Copyright © 2017 Pavlo Plakhotia</p>
             </div>
           </footer>
         </section>
       </nav>
-      <button class="humb js-humb"><span></span></button>
+      <button class="humb js-humb">
+        <span></span>
+      </button>
     </div>
     <!-- END content -->
 
     <!-- BEGIN modals -->
     <div class="overlay js-overlay" style="display: none;">
       <div class="modal js-modal">
-        <button class="modal__close js-modal-close"><svg class="icon icon-close">
-    <use xlink:href="img/sprite.svg#icon-close"></use>
-</svg>
-</button>
+        <button class="modal__close js-modal-close">
+          <svg class="icon icon-close">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
         <div class="modal__in">
           <div class="modal__img js-modal-img"></div>
         </div>
@@ -157,5 +187,4 @@
     </script>
 
   </body>
-
 </html>
