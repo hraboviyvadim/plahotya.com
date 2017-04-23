@@ -14,6 +14,23 @@ $(document).ready(function () {
     $('html').addClass('is-touch');
   }
 
+  // animated letters carousel
+  const heroSlider = () => {
+    const el = $('.js-hero');
+    const item = el.find('strong');
+
+    item.html(function(i, html) { return html.replace(/\S/g, '<span>$&</span>'); });
+    el.slick({
+      speed: 0,
+      fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      arrows: false
+    });
+  };
+
+
   // show preloader between inner pages
   const section = $('.section');
   const addPreloader = () => { section.addClass('is-loading'); console.log('add preloader'); };
@@ -25,6 +42,7 @@ $(document).ready(function () {
     onEnter: function() {
       wrapper.addClass('is-homepage');
       $('[data-title]').removeClass('active');
+      heroSlider();
     },
     onLeave: function() {
       setTimeout(function () {

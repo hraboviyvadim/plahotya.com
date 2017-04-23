@@ -362,6 +362,23 @@
     font-size: 1.6rem
   .slider__footer
     padding-top: 10px
+.hero-slider
+  position: relative
+  .slick-slide
+    span
+      position: relative
+      display: inline-block
+      opacity: 0
+      transform: translateY(-50px)
+      transition: transform 200ms, opacity 200ms
+      @for $i from 1 through 50
+        &:nth-child(#{$i})
+          transition-delay: #{50 * $i}ms
+    &.slick-current
+      span
+        opacity: 1
+        transform: translateY(0)
+
 .counter
   position: absolute
   top: -62px

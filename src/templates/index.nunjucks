@@ -18,7 +18,13 @@ page: is-homepage
         </div>
         <div class="start__title title">
           <p>i'm your</p>
-          <p><strong>UI/UX Designer</strong></p>
+          <div class="hero-slider js-hero">
+            <p><strong>UI/UX DESIGNER</strong></p>
+            <p><strong>WEB DESIGNER</strong></p>
+            <p><strong>MOTION DESIGNER</strong></p>
+            <p><strong>GRAPHIC DESIGNER</strong></p>
+            <p><strong>ILLUSTRATOR</strong></p>
+          </div>
         </div>
         <div class="start__btn">
           <a href="about.html" class="btn">about me</a>

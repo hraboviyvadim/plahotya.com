@@ -15022,6 +15022,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     (0, _jquery2.default)('html').addClass('is-touch');
   }
 
+  // animated letters carousel
+  var heroSlider = function heroSlider() {
+    var el = (0, _jquery2.default)('.js-hero');
+    var item = el.find('strong');
+
+    item.html(function (i, html) {
+      return html.replace(/\S/g, '<span>$&</span>');
+    });
+    el.slick({
+      speed: 0,
+      fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      arrows: false
+    });
+  };
+
   // show preloader between inner pages
   var section = (0, _jquery2.default)('.section');
   var addPreloader = function addPreloader() {
@@ -15037,6 +15055,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     onEnter: function onEnter() {
       wrapper.addClass('is-homepage');
       (0, _jquery2.default)('[data-title]').removeClass('active');
+      heroSlider();
     },
     onLeave: function onLeave() {
       setTimeout(function () {
