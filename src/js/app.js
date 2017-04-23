@@ -30,6 +30,63 @@ $(document).ready(function () {
     });
   };
 
+  // contacs form submit
+  const formSubmit = () => {
+    $('#contactForm').on('submit', function (e) {
+      e.preventDefault();
+      const _this = $(this);
+      const url = 'https://script.google.com/macros/s/AKfycbyKMDUOWz7EucxGTEojTLCYHii3v55eG6lL9eo-4iDvhX5eOGaT/exec';
+      const input = $(this).find('.input');
+      const textarea = $(this).find('.textarea');
+
+      const clientEmail = input.val();
+      const clientMessage = textarea.val();
+
+      input.removeClass('error');
+      textarea.removeClass('error');
+
+      if(!emailValidation(clientEmail)) {
+        input.addClass('error');
+        setTimeout(() => {
+          input.removeClass('error');
+        }, 1000);
+      }
+
+      if(!clientMessage.trim().length) {
+        textarea.addClass('error');
+        setTimeout(() => {
+          textarea.removeClass('error');
+        }, 1100);
+      }
+      if (emailValidation(clientEmail) && clientMessage.trim().length) {
+        const data = {
+          f: 'new_message',
+          email: clientEmail,
+          message: clientMessage
+        };
+        _this.find('.btn span').text('Loading...');
+        $.post({
+          url: url,
+          data: data,
+          success: function (result) {
+            _this.find('.btn').addClass('success');
+            setTimeout(() => {
+              _this.find('.btn').removeClass('success');
+              _this.find('.btn span').text('submit');
+            }, 2000);
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            _this.find('.btn').addClass('error');
+            _this.find('.btn span').text('try again');
+            setTimeout(() => {
+              _this.find('.btn').removeClass('error');
+              _this.find('.btn span').text('submit');
+            }, 2000);
+          }
+        });
+      }
+    });
+  };
 
   // show preloader between inner pages
   const section = $('.section');
@@ -96,6 +153,7 @@ $(document).ready(function () {
     onEnterCompleted: function() {
       $('[data-title]').removeClass('active');
       $('[data-title="contact"]').addClass('active');
+      formSubmit();
     },
     onLeave: function() {
       hideNav();
@@ -167,61 +225,5 @@ $(document).ready(function () {
   function emailValidation(str) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str);
   }
-
-  // contacs form submit
-  $('#contactForm').on('submit', function (e) {
-    e.preventDefault();
-    const _this = $(this);
-    const url = 'https://script.google.com/macros/s/AKfycbyKMDUOWz7EucxGTEojTLCYHii3v55eG6lL9eo-4iDvhX5eOGaT/exec';
-    const input = $(this).find('.input');
-    const textarea = $(this).find('.textarea');
-
-    const clientEmail = input.val();
-    const clientMessage = textarea.val();
-
-    input.removeClass('error');
-    textarea.removeClass('error');
-
-    if(!emailValidation(clientEmail)) {
-      input.addClass('error');
-      setTimeout(() => {
-        input.removeClass('error');
-      }, 1000);
-    }
-
-    if(!clientMessage.trim().length) {
-      textarea.addClass('error');
-      setTimeout(() => {
-        textarea.removeClass('error');
-      }, 1100);
-    }
-    if (emailValidation(clientEmail) && clientMessage.trim().length) {
-      const data = {
-        f: 'new_message',
-        email: clientEmail,
-        message: clientMessage
-      };
-      _this.find('.btn span').text('Loading...');
-      $.post({
-        url: url,
-        data: data,
-        success: function (result) {
-          _this.find('.btn').addClass('success');
-          setTimeout(() => {
-            _this.find('.btn').removeClass('success');
-            _this.find('.btn span').text('submit');
-          }, 2000);
-        },
-        error: function (xhr, ajaxOptions, thrownError) {
-          _this.find('.btn').addClass('error');
-          _this.find('.btn span').text('try again');
-          setTimeout(() => {
-            _this.find('.btn').removeClass('error');
-            _this.find('.btn span').text('submit');
-          }, 2000);
-        }
-      });
-    }
-  });
 
 });
