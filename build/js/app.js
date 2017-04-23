@@ -15182,7 +15182,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _jquery2.default)('#contactForm').on('submit', function (e) {
     e.preventDefault();
     var _this = (0, _jquery2.default)(this);
-    var url = (0, _jquery2.default)(this).attr('action');
+    var url = 'https://script.google.com/macros/s/AKfycbyKMDUOWz7EucxGTEojTLCYHii3v55eG6lL9eo-4iDvhX5eOGaT/exec';
     var input = (0, _jquery2.default)(this).find('.input');
     var textarea = (0, _jquery2.default)(this).find('.textarea');
 

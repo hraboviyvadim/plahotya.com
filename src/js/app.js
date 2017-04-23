@@ -172,7 +172,7 @@ $(document).ready(function () {
   $('#contactForm').on('submit', function (e) {
     e.preventDefault();
     const _this = $(this);
-    const url = $(this).attr('action');
+    const url = 'https://script.google.com/macros/s/AKfycbyKMDUOWz7EucxGTEojTLCYHii3v55eG6lL9eo-4iDvhX5eOGaT/exec';
     const input = $(this).find('.input');
     const textarea = $(this).find('.textarea');
 
